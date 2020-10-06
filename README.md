@@ -33,7 +33,7 @@ Colabではドライブをマウントしてデータを扱います。
 4. Makefile...GPU,CUDNN,CUDNN_HALF,OPENCVの数値を1に変える
 5. cfg/yolov4-custom.cfg...subdivisions=32,max_batches=4000, steps=3200,3600などとし、さらに最後の方にある3つのyoloレイヤーでClasses=(クラス数)に、各yoloレイヤーの直前にあるconvolutionalレイヤーにてfilters=(クラス数+5)×3に変更する。入力サイズは自由に変えてもよいが32の倍数でないとエラーが出る。これを"yolov4-obj.cfgと名前をつけて保存。次に最初の方の2つのbatch,subdivisionのコメントアウトを入れ替えて"yolov4-obj-test.cfg"で保存する。
 6. data/coco.names...自分が設定したクラスに書き換えてobj.namesとして保存
-7. cfg/coco.data...こんな感じに↓
+7. cfg/coco.data...こんな感じに↓ して、obj.dataと名前をつけdata/に保存。
 ```
 classes= (クラス数)
 train  = data/train.txt
