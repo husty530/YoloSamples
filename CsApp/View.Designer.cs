@@ -100,27 +100,27 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(12, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 15);
+            this.label3.Size = new System.Drawing.Size(90, 15);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Config File";
+            this.label3.Text = "Config File Path";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(11, 63);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 15);
+            this.label4.Size = new System.Drawing.Size(91, 15);
             this.label4.TabIndex = 6;
-            this.label4.Text = "Names File";
+            this.label4.Text = "Names File Path";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(12, 121);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(71, 15);
+            this.label5.Size = new System.Drawing.Size(98, 15);
             this.label5.TabIndex = 7;
-            this.label5.Text = "Weights File";
+            this.label5.Text = "Weights File Path";
             // 
             // CfgTx
             // 
