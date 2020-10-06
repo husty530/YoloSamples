@@ -23,7 +23,7 @@
 Anaconda環境があれば、[labelImg](https://github.com/tzutalin/labelImg)が便利です。  
 インストール法および使い方は[コチラ](https://www.miki-ie.com/python/labelimg-annotation-yolo-darknet/)から。  
 pre-defined-classとYOLO/PascalVOCの設定を間違うとめっちゃ後悔します。  
-最終的に画像名と同じだけ.txtファイルが出力されていればOK  
+最終的に画像名と同じ.txtファイルが出力されていればOK  
   
 Anaconda環境の設定が面倒なら付属の[LabelingTool](/LabelingTool)でもできます(たぶん)。  
 
