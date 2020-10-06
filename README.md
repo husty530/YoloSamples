@@ -5,7 +5,7 @@
 ## Contents
 [CsApp](/CsApp)...C#で推論実行するアプリ  
 [YoloSharp](/YoloSharp)...C#のYOLO推論ライブラリ  
-[LabelingTool](/LabelingTool)...C#で作ったラベリング用のツールです  
+[LabelingTool](/LabelingTool)...C#で作ったラベリング用のツール  
 [Yolov4.ipynb](/Yolov4.ipynb)...Google Colab用のノートブック  
 [process.py](/process.py)...train-test-split用。Colabで使うと楽です。  
 
