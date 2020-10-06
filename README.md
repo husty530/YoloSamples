@@ -42,7 +42,7 @@ names = data/obj.names
 backup = backup/
 ```
 8. DEMOに書いた公式ページからdarknet/に”yolov4.conv.137”を入れる
-9. [process.py](/process.py)内のフォルダ名を自分がデータを入れたフォルダ名にして、darknet/data/に入れる
+9. [process.py](/process.py)内のフォルダ名を自分がデータを入れたドライブのフォルダ名にして、darknet/data/に入れる
 10. ここからColab。まず"ランタイムの設定変更"からGPUを選択しておく
 11. コンパイル → train-testの切り分け → 学習(最初から)をポチポチするだけ。画面がザーッと流れ続けていたらうまくいっている。  
 (2回目以降コンパイルがらみのエラーが出る場合はいったんdarknet.exeを消してコンパイルし直してください)  
@@ -51,3 +51,5 @@ backup = backup/
 ---
 
 ## Testing
+Demoと同じです。必要なファイルはobj.cfg, obj.names, yolov4-obj_final.weights。  
+これらを差し替えてCsAppから実行してみましょう。
