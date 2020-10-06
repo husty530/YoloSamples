@@ -5,6 +5,7 @@
 ## Contents
 [CsApp](/CsApp)...C#で推論実行するアプリ  
 [YoloSharp](/YoloSharp)...C#のYOLO推論ライブラリ  
+[LabelingTool](/LabelingTool)...C#で作ったラベリング用のツール  
 [Yolov4.ipynb](/Yolov4.ipynb)...Google Colab用のノートブック  
 [process.py](/process.py)...train-test-split用。Colabで使うと楽です。  
 
@@ -13,7 +14,9 @@
 1. [公式ページ](https://github.com/AlexeyAB/darknet)から"yolov4.cfg", "coco.names", "yolov4.weights"をダウンロード
 2. CsAppをビルド
 3. ダウンロードしたモデルのパスを書き込み、ボタンをポチポチ  
-サンプル画像つけてますのでどうぞ。
+サンプル画像つけてますのでどうぞ。  
+![Sample](/Sample.jpg)
+![detect](/detect.png)
 
 ---
 
@@ -22,11 +25,15 @@
 Anaconda環境があれば、[labelImg](https://github.com/tzutalin/labelImg)が便利です。  
 インストール法および使い方は[コチラ](https://www.miki-ie.com/python/labelimg-annotation-yolo-darknet/)から。  
 pre-defined-classとYOLO/PascalVOCの設定を間違うとめっちゃ後悔します。  
-最終的に画像名と同じだけ.txtファイルが出力されていればOK  
+最終的に画像名と同じ.txtファイルが出力されていればOK  
+  
+Anaconda環境の設定が面倒なら付属の[LabelingTool](/LabelingTool)でもできます(たぶん)。  
+こちらは1ラベルのアノテーションのみ可です。複数もできますが、めんどい。。  
+![labeling](/labeling.png)
 
 #### GoogleDriveの編集
 Colabではドライブをマウントしてデータを扱います。  
-以下、手順どおりに進めてください  
+以下、手順どおりに進めてください。  
 1. Yolov4.ipynbを開き、ドライブをマウントする
 2. 1つ目のセルでドライブにYoloのリポジトリをクローンする
 3. ここからドライブ内の作業。darknet/data/にフォルダを作成し、作成した画像およびラベルデータをすべて入れる
@@ -44,12 +51,12 @@ backup = backup/
 8. DEMOに書いた公式ページからdarknet/に”yolov4.conv.137”を入れる
 9. [process.py](/process.py)内のフォルダ名を自分がデータを入れたドライブのフォルダ名にして、darknet/data/に入れる
 10. ここからColab。まず"ランタイムの設定変更"からGPUを選択しておく
-11. コンパイル → train-testの切り分け → 学習(最初から)をポチポチするだけ。画面がザーッと流れ続けていたらうまくいっている。  
+11. コンパイル → process.py(train-testの切り分け) → 学習(最初から)をポチポチするだけ。画面がザーッと流れ続けていたらうまくいっている。  
 (2回目以降コンパイルがらみのエラーが出る場合はいったんdarknet.exeを消してコンパイルし直してください)  
 12. 学習モデルは随時backup/フォルダに保存される。chart.pngも保存されるので学習経過を見ることもできる。  
 
 ---
 
 ## Testing
-Demoと同じです。必要なファイルはobj.cfg, obj.names, yolov4-obj_final.weights。  
+Demoと同じです。必要なファイルはyolov4-obj-test.cfg, obj.names, yolov4-obj_final.weights。  
 これらを差し替えてCsAppから実行してみましょう。
