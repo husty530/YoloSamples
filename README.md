@@ -8,6 +8,7 @@
 1. 公式から"yolov4.cfg", "coco.names", "yolov4.weights"をダウンロード
 2. CsAppをビルド
 3. ダウンロードしたモデルのパスを書き込み、ボタンをポチポチ
+サンプル画像つけてますのでどうぞ。
 
 ## Training
 
