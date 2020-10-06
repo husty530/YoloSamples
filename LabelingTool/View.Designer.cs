@@ -73,7 +73,7 @@
             this.UndoButton.Name = "UndoButton";
             this.UndoButton.Size = new System.Drawing.Size(114, 47);
             this.UndoButton.TabIndex = 2;
-            this.UndoButton.Text = "Undo";
+            this.UndoButton.Text = "Undo(Z)";
             this.UndoButton.UseVisualStyleBackColor = true;
             this.UndoButton.Click += new System.EventHandler(this.UndoButton_Click);
             // 
@@ -84,7 +84,7 @@
             this.ClearButton.Name = "ClearButton";
             this.ClearButton.Size = new System.Drawing.Size(114, 47);
             this.ClearButton.TabIndex = 3;
-            this.ClearButton.Text = "Clear";
+            this.ClearButton.Text = "Clear(C)";
             this.ClearButton.UseVisualStyleBackColor = true;
             this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
@@ -95,31 +95,31 @@
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(114, 47);
             this.SaveButton.TabIndex = 4;
-            this.SaveButton.Text = "Save";
+            this.SaveButton.Text = "Save(S)";
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // BackButton
             // 
-            this.BackButton.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BackButton.Font = new System.Drawing.Font("Yu Gothic UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BackButton.ForeColor = System.Drawing.Color.Maroon;
             this.BackButton.Location = new System.Drawing.Point(406, 12);
             this.BackButton.Name = "BackButton";
             this.BackButton.Size = new System.Drawing.Size(50, 47);
             this.BackButton.TabIndex = 5;
-            this.BackButton.Text = "◀";
+            this.BackButton.Text = "◀(A)";
             this.BackButton.UseVisualStyleBackColor = true;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // NextButton
             // 
-            this.NextButton.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.NextButton.Font = new System.Drawing.Font("Yu Gothic UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NextButton.ForeColor = System.Drawing.Color.Navy;
             this.NextButton.Location = new System.Drawing.Point(462, 12);
             this.NextButton.Name = "NextButton";
             this.NextButton.Size = new System.Drawing.Size(50, 47);
             this.NextButton.TabIndex = 6;
-            this.NextButton.Text = "▶";
+            this.NextButton.Text = "▶(D)";
             this.NextButton.UseVisualStyleBackColor = true;
             this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
             // 
@@ -194,8 +194,10 @@
             this.Controls.Add(this.UndoButton);
             this.Controls.Add(this.SaveDirButton);
             this.Controls.Add(this.OpenDirButton);
+            this.KeyPreview = true;
             this.Name = "View";
             this.Text = "Labeling Tool";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.View_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

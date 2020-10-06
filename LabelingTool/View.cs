@@ -120,5 +120,50 @@ namespace LabelingTool
             ClearButton.Enabled = true;
             SaveButton.Enabled = true;
         }
+
+        private void View_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            switch (e.KeyChar.ToString())
+            {
+                case "a":
+                    if (BackButton.Enabled == false) break;
+                    var img1 = Processing.GoBack();
+                    pictureBox.Image = img1.ToBitmap();
+                    NextButton.Enabled = true;
+                    if (Processing.FrameNumber == 0) BackButton.Enabled = false;
+                    break;
+                case "d":
+                    if (NextButton.Enabled == false) break;
+                    var img2 = Processing.GoNext();
+                    pictureBox.Image = img2.ToBitmap();
+                    BackButton.Enabled = true;
+                    if (Processing.FrameNumber == Processing.FileCount - 1) NextButton.Enabled = false;
+                    break;
+                case "s":
+                    if (SaveButton.Enabled == false) break;
+                    Processing.Save();
+                    SaveButton.Enabled = false;
+                    break;
+                case "c":
+                    if (ClearButton.Enabled == false) break;
+                    var img3 = Processing.Clear();
+                    pictureBox.Image = img3.ToBitmap();
+                    UndoButton.Enabled = false;
+                    ClearButton.Enabled = false;
+                    SaveButton.Enabled = false;
+                    break;
+                case "z":
+                    if (UndoButton.Enabled == false) break;
+                    var img4 = Processing.RemoveLast();
+                    pictureBox.Image = img4.ToBitmap();
+                    SaveButton.Enabled = true;
+                    if (Processing.RectCount == 0)
+                    {
+                        UndoButton.Enabled = false;
+                        ClearButton.Enabled = false;
+                    }
+                    break;
+            }
+        }
     }
 }

@@ -233,7 +233,7 @@
             this.Controls.Add(this.InitButton);
             this.Controls.Add(this.OpenButton);
             this.Name = "View";
-            this.Text = "Detection Time : ";
+            this.Text = "Cs App";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
