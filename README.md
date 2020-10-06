@@ -5,6 +5,7 @@
 ## Contents
 [CsApp](/CsApp)...C#で推論実行するアプリ  
 [YoloSharp](/YoloSharp)...C#のYOLO推論ライブラリ  
+[LabelingTool](/LabelingTool)...C#で作ったラベリング用のツールです  
 [Yolov4.ipynb](/Yolov4.ipynb)...Google Colab用のノートブック  
 [process.py](/process.py)...train-test-split用。Colabで使うと楽です。  
 
@@ -23,6 +24,8 @@ Anaconda環境があれば、[labelImg](https://github.com/tzutalin/labelImg)が
 インストール法および使い方は[コチラ](https://www.miki-ie.com/python/labelimg-annotation-yolo-darknet/)から。  
 pre-defined-classとYOLO/PascalVOCの設定を間違うとめっちゃ後悔します。  
 最終的に画像名と同じだけ.txtファイルが出力されていればOK  
+  
+Anaconda環境の設定が面倒なら付属の[LabelingTool](/LabelingTool)でもできます(たぶん)。  
 
 #### GoogleDriveの編集
 Colabではドライブをマウントしてデータを扱います。  
