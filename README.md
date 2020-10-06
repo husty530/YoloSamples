@@ -15,6 +15,8 @@
 2. CsAppをビルド
 3. ダウンロードしたモデルのパスを書き込み、ボタンをポチポチ  
 サンプル画像つけてますのでどうぞ。
+![Sample](/Sample.jpg)
+![detect](/detect.png)
 
 ---
 
@@ -26,6 +28,7 @@ pre-defined-classとYOLO/PascalVOCの設定を間違うとめっちゃ後悔し�
 最終的に画像名と同じ.txtファイルが出力されていればOK  
   
 Anaconda環境の設定が面倒なら付属の[LabelingTool](/LabelingTool)でもできます(たぶん)。  
+![labeling](/labeling.png)
 
 #### GoogleDriveの編集
 Colabではドライブをマウントしてデータを扱います。  
