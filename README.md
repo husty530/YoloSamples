@@ -28,6 +28,7 @@ pre-defined-classとYOLO/PascalVOCの設定を間違うとめっちゃ後悔し�
 最終的に画像名と同じ.txtファイルが出力されていればOK  
   
 Anaconda環境の設定が面倒なら付属の[LabelingTool](/LabelingTool)でもできます(たぶん)。  
+こちらは1ラベルのアノテーションのみ可です。複数もできますが、めんどい。。  
 ![labeling](/labeling.png)
 
 #### GoogleDriveの編集
