@@ -14,7 +14,7 @@
 1. [公式ページ](https://github.com/AlexeyAB/darknet)から"yolov4.cfg", "coco.names", "yolov4.weights"をダウンロード
 2. CsAppをビルド
 3. ダウンロードしたモデルのパスを書き込み、ボタンをポチポチ  
-サンプル画像つけてますのでどうぞ。
+サンプル画像つけてますのでどうぞ。  
 ![Sample](/Sample.jpg)
 ![detect](/detect.png)
 
