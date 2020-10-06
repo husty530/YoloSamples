@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CsApp", "CsApp\CsApp.csproj", "{2CFA73E1-7CC3-452A-A80E-561B70B788F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoloSharp", "YoloSharp\YoloSharp.csproj", "{C459F769-F1D0-45D1-9193-953341B79E76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YoloSharp", "YoloSharp\YoloSharp.csproj", "{C459F769-F1D0-45D1-9193-953341B79E76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabelingTool", "LabelingTool\LabelingTool.csproj", "{686D03C8-285A-4B7C-8336-806D749F35B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{C459F769-F1D0-45D1-9193-953341B79E76}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C459F769-F1D0-45D1-9193-953341B79E76}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C459F769-F1D0-45D1-9193-953341B79E76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{686D03C8-285A-4B7C-8336-806D749F35B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{686D03C8-285A-4B7C-8336-806D749F35B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{686D03C8-285A-4B7C-8336-806D749F35B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{686D03C8-285A-4B7C-8336-806D749F35B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
