@@ -16,7 +16,7 @@
 # Demo(C++)  
   
 1. [公式ページ](https://github.com/AlexeyAB/darknet)から"yolov4.cfg", "coco.names", "yolov4.weights"をダウンロード
-2. [ココ](https://swallow-incubate.com/archives/blog/20200508/)や[ココ](https://kamino.hatenablog.com/entry/opencv_contrib_install)を参考にopencv-contribをビルドする。
+2. [ココ](https://swallow-incubate.com/archives/blog/20200508/)や[ココ](https://kamino.hatenablog.com/entry/opencv_contrib_install)を参考にopencv-contribをビルドする。(これがかなりダルイ)
 3. 環境変数の設定、インクルードディレクトリやリンカーの追加も上記のページを参考に行う。
 4. VisualStudioにてCppAppを"デバッグ"  
   
