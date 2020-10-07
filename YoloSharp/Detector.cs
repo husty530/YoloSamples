@@ -54,24 +54,22 @@ namespace YoloSharp
             var selectedBoxes = new List<Rect2d>();
             var w = image.Width;
             var h = image.Height;
-            foreach (var prob in output)
+            foreach (var pred in output)
             {
-                for (var i = 0; i < prob.Rows; i++)
+                for (var i = 0; i < pred.Rows; i++)
                 {
-                    var confidence = prob.At<float>(i, 4);
+                    var confidence = pred.At<float>(i, 4);
                     if (confidence > threshold)
                     {
-                        Cv2.MinMaxLoc(prob.Row(i).ColRange(5, prob.Cols), out _, out Point max);
-                        var classes = max.X;
-                        var probability = prob.At<float>(i, classes + 5);
-
+                        Cv2.MinMaxLoc(pred.Row(i).ColRange(5, pred.Cols), out _, out Point classIdPoint);
+                        var probability = pred.At<float>(i, classIdPoint.X + 5);
                         if (probability > threshold)
                         {
-                            var centerX = prob.At<float>(i, 0) * w;
-                            var centerY = prob.At<float>(i, 1) * h;
-                            var width = prob.At<float>(i, 2) * w;
-                            var height = prob.At<float>(i, 3) * h;
-                            classIds.Add(classes);
+                            var centerX = pred.At<float>(i, 0) * w;
+                            var centerY = pred.At<float>(i, 1) * h;
+                            var width = pred.At<float>(i, 2) * w;
+                            var height = pred.At<float>(i, 3) * h;
+                            classIds.Add(classIdPoint.X);
                             confidences.Add(confidence);
                             probabilities.Add(probability);
                             boxes.Add(new Rect2d(centerX, centerY, width, height));
