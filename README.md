@@ -34,7 +34,7 @@
 ---
 
 # Training
-## ラベリング作業
+### ラベリング作業
 Anaconda環境があれば、[labelImg](https://github.com/tzutalin/labelImg)が便利です。  
 インストール法および使い方は[コチラ](https://www.miki-ie.com/python/labelimg-annotation-yolo-darknet/)から。  
 pre-defined-classとYOLO/PascalVOCの設定を間違うとめっちゃ後悔します。  
@@ -44,7 +44,7 @@ Anaconda環境の設定が面倒なら付属の[LabelingTool](/LabelingTool)で�
 こちらは1ラベルのアノテーションのみ可です。複数もできますが、めんどい。。  
 ![labeling](/labeling.png)
 
-## GoogleDriveの編集
+### GoogleDriveの編集
 Colabではドライブをマウントしてデータを扱います。  
 以下、手順どおりに進めてください。  
 1. Yolov4.ipynbを開き、ドライブをマウントする
