@@ -40,7 +40,7 @@
   
 ---
   
-# Training  
+# Train  
   
 ### ラベリング作業  
   
@@ -65,7 +65,7 @@ Colabではドライブをマウントしてデータを扱います。
 5. "cfg/yolov4-custom.cfg" ... subdivisions=32,max_batches=4000, steps=3200,3600などとし、さらに最後の方にある3つのyoloレイヤーでClasses=(クラス数)に、各yoloレイヤーの直前にあるconvolutionalレイヤーにて"filters=(クラス数+5)×3"に変更する。入力サイズは自由に変えてもよいが32の倍数でないとエラーが出る。これを"yolov4-obj.cfg"と名前をつけて保存。次に最初の方の2つのbatch,subdivisionのコメントアウトを入れ替えて"yolov4-obj-test.cfg"で保存する。
 6. "data/coco.names" ... 自分が設定したクラスに書き換えて"obj.names"として保存  
   
-7. "cfg/coco.data" ... こんな感じに↓ して、"obj.data"と名前をつけ"data/"に保存。
+7. "cfg/coco.data" ... こんな感じ ↓ にして、"obj.data"と名前をつけ"data/"に保存。
 ```
 classes= (クラス数)
 train  = data/train.txt
@@ -76,14 +76,14 @@ backup = backup/
   
 8. DEMOに書いた公式ページから"darknet/"に”yolov4.conv.137”を入れる
 9. "[process.py](/process.py)"内のフォルダ名を自分がデータを入れたドライブのフォルダ名にして、"darknet/data/"に入れる
-10. ここからColab。まず"ランタイムの設定変更"からGPUを選択しておく
+10. ここからColab。まず"ランタイムの設定変更"から"GPU"を選択しておく
 11. コンパイル → "process.py"(train-testの切り分け) → 学習(最初から)をポチポチするだけ。画面がザーッと流れ続けていたらうまくいっている。  
 (2回目以降コンパイルがらみのエラーが出る場合はいったん"darknet.exe"を消してコンパイルし直してください)  
 12. 学習モデルは随時"backup/"フォルダに保存される。"chart.png"も保存されるので学習経過を見ることもできる。  
   
 ---
   
-# Testing  
+# Test  
   
 Demoと同じです。必要なファイルは"yolov4-obj-test.cfg", "obj.names", "yolov4-obj_final.weights"。  
 これらを差し替えてアプリケーションを実行してみましょう。  
