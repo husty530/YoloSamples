@@ -3,20 +3,12 @@
 ---
 
 ## Contents
-[CsApp](/CsApp)...C#で推論実行するアプリ  
-[YoloSharp](/YoloSharp)...C#のYOLO推論ライブラリ  
-[LabelingTool](/LabelingTool)...C#で作ったラベリング用のツール  
-[Yolov4.ipynb](/Yolov4.ipynb)...Google Colab用のノートブック  
-[process.py](/process.py)...train-test-split用。Colabで使うと楽です。  
-
----
-## Demo(C#)
-1. [公式ページ](https://github.com/AlexeyAB/darknet)から"yolov4.cfg", "coco.names", "yolov4.weights"をダウンロード
-2. VisualStudioにてCsAppを"デバッグ"
-3. ダウンロードしたモデルのパスを書き込み、ボタンをポチポチ  
-サンプル画像つけてますのでどうぞ。  
-![Sample](/Sample.jpg)
-![csSample](/csSample.png)
+[CppApp](/CppApp) ... C++で推論実行するアプリ  
+[CsApp](/CsApp) ... C#で推論実行するアプリ  
+[YoloSharp](/YoloSharp) ... C#のYOLO推論ライブラリ  
+[LabelingTool](/LabelingTool) ... C#で作ったラベリング用のツール  
+[Yolov4.ipynb](/Yolov4.ipynb) ... Google Colab用のノートブック  
+[process.py](/process.py) ... train-test-split用。Colabで使うと楽です。  
 
 ---
 
@@ -25,8 +17,19 @@
 2. [ココ](https://swallow-incubate.com/archives/blog/20200508/)や[ココ](https://kamino.hatenablog.com/entry/opencv_contrib_install)を参考にopencv-contribをビルドする。
 3. 環境変数の設定、インクルードディレクトリやリンカーの追加も上記のページを参考に行う。
 4. VisualStudioにてCppAppを"デバッグ"  
+サンプル画像つけてますのでどうぞ。  
+![Sample](/Sample.jpg)  
 うまくいけばこんな感じ↓  
 ![cppSample](/cppSample.png)  
+
+---
+
+## Demo(C#)
+1. [公式ページ](https://github.com/AlexeyAB/darknet)から"yolov4.cfg", "coco.names", "yolov4.weights"をダウンロード
+2. VisualStudioにてCsAppを"デバッグ"
+3. ダウンロードしたモデルのパスを書き込み、ボタンをポチポチ  
+
+![csSample](/csSample.png)
 
 ---
 
@@ -69,4 +72,7 @@ backup = backup/
 
 ## Testing
 Demoと同じです。必要なファイルはyolov4-obj-test.cfg, obj.names, yolov4-obj_final.weights。  
-これらを差し替えてCsAppから実行してみましょう。
+これらを差し替えてアプリケーションを実行してみましょう。  
+変更箇所  
+* CppApp ... コードの中(CppApp.cpp)でモデルのパスおよびBlobSize(任意)を編集。
+* CsApp ... フォーム上ですべて設定。 →　Initボタンでロード。
