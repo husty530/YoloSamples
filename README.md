@@ -1,8 +1,8 @@
-# YoloSamples
+# YoloSamples -- C++ and C# --
 
 ---
 
-## Contents
+# Contents
 [CppApp](/CppApp) ... C++で推論実行するアプリ  
 [CsApp](/CsApp) ... C#で推論実行するアプリ  
 [YoloSharp](/YoloSharp) ... C#のYOLO推論ライブラリ  
@@ -12,7 +12,7 @@
 
 ---
 
-## Demo(C++)
+# Demo(C++)
 1. [公式ページ](https://github.com/AlexeyAB/darknet)から"yolov4.cfg", "coco.names", "yolov4.weights"をダウンロード
 2. [ココ](https://swallow-incubate.com/archives/blog/20200508/)や[ココ](https://kamino.hatenablog.com/entry/opencv_contrib_install)を参考にopencv-contribをビルドする。
 3. 環境変数の設定、インクルードディレクトリやリンカーの追加も上記のページを参考に行う。
@@ -24,7 +24,7 @@
 
 ---
 
-## Demo(C#)
+# Demo(C#)
 1. [公式ページ](https://github.com/AlexeyAB/darknet)から"yolov4.cfg", "coco.names", "yolov4.weights"をダウンロード
 2. VisualStudioにてCsAppを"デバッグ"
 3. ダウンロードしたモデルのパスを書き込み、ボタンをポチポチ  
@@ -33,8 +33,8 @@
 
 ---
 
-## Training
-#### ラベリング作業
+# Training
+## ラベリング作業
 Anaconda環境があれば、[labelImg](https://github.com/tzutalin/labelImg)が便利です。  
 インストール法および使い方は[コチラ](https://www.miki-ie.com/python/labelimg-annotation-yolo-darknet/)から。  
 pre-defined-classとYOLO/PascalVOCの設定を間違うとめっちゃ後悔します。  
@@ -44,7 +44,7 @@ Anaconda環境の設定が面倒なら付属の[LabelingTool](/LabelingTool)で�
 こちらは1ラベルのアノテーションのみ可です。複数もできますが、めんどい。。  
 ![labeling](/labeling.png)
 
-#### GoogleDriveの編集
+## GoogleDriveの編集
 Colabではドライブをマウントしてデータを扱います。  
 以下、手順どおりに進めてください。  
 1. Yolov4.ipynbを開き、ドライブをマウントする
@@ -70,7 +70,7 @@ backup = backup/
 
 ---
 
-## Testing
+# Testing
 Demoと同じです。必要なファイルはyolov4-obj-test.cfg, obj.names, yolov4-obj_final.weights。  
 これらを差し替えてアプリケーションを実行してみましょう。  
 変更箇所  
