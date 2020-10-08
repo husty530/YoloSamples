@@ -7,7 +7,7 @@
 [CppApp](/CppApp) ... C++で推論実行するアプリ  
 [CsApp](/CsApp) ... C#で推論実行するアプリ  
 [YoloSharp](/YoloSharp) ... C#のYOLO推論ライブラリ  
-[LabelingTool](/LabelingTool) ... C#で作ったラベリング用のツール  
+[LabellingTool](/LabellingTool) ... C#で作ったラベリング用のツール  
 [Yolov4.ipynb](/Yolov4.ipynb) ... Google Colab用のノートブック  
 [process.py](/process.py) ... train-test-split用。Colabで使うと楽です。  
   
@@ -15,7 +15,8 @@
   
 # Demo(C++)  
   
-1. [AlexeyAB公式リポジトリ](https://github.com/AlexeyAB/darknet)から"yolov4.cfg", "coco.names", "yolov4.weights"をダウンロード
+1. [AlexeyAB公式リポジトリ](https://github.com/AlexeyAB/darknet)から"yolov4.cfg", "coco.names", "yolov4.weights"をダウンロード  
+　(リポジトリ本体をクローンする必要はありません。学習時にColabに取り込みます。)  
 2. "[ココ](https://swallow-incubate.com/archives/blog/20200508/)"や"[ココ](https://kamino.hatenablog.com/entry/opencv_contrib_install)"を参考にopencv-contribをビルドする。(これがかなりダルイ)
 3. 環境変数の設定、インクルードディレクトリやリンカーの追加も上記のページを参考に行う。
 4. VisualStudioにて"CppApp"を"デバッグ"  
@@ -50,8 +51,11 @@ Anaconda環境があれば、"[labelImg](https://github.com/tzutalin/labelImg)"�
 最終的に画像名と同じ.txtファイルが出力されていればOK。  
   
 Anaconda環境の設定が面倒なら付属の"[LabellingTool](/LabelingTool)"でもできます(たぶん)。  
-こちらは1ラベルのアノテーションのみ可です。複数対応にアップグレードもできますが、めんどい。。  
-![labelling](/labeling.png)  
+LabellingToolディレクトリ内の"classes.txt"を事前に編集すれば自由にクラスラベルを変えられます。  
+キー操作は全部左手におさまるようにしました。(A = Back, D = Next, S = Save, C = Clear, Z = Undo)  
+本家の機能のミニマムをとった感じで、シンプルな使い勝手なのではないでしょうか(感想)。  
+  
+![labelling](/labelling.png)  
   
 ### GoogleDriveの編集  
   
