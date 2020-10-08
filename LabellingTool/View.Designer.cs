@@ -1,4 +1,4 @@
-﻿namespace LabelingTool
+﻿namespace LabellingTool
 {
     partial class View
     {
@@ -41,6 +41,8 @@
             this.WidthTx = new System.Windows.Forms.TextBox();
             this.ExtensionTx = new System.Windows.Forms.TextBox();
             this.HeightTx = new System.Windows.Forms.TextBox();
+            this.comboBox = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,9 +71,9 @@
             // UndoButton
             // 
             this.UndoButton.Font = new System.Drawing.Font("Yu Gothic UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.UndoButton.Location = new System.Drawing.Point(638, 12);
+            this.UndoButton.Location = new System.Drawing.Point(586, 12);
             this.UndoButton.Name = "UndoButton";
-            this.UndoButton.Size = new System.Drawing.Size(114, 47);
+            this.UndoButton.Size = new System.Drawing.Size(81, 47);
             this.UndoButton.TabIndex = 2;
             this.UndoButton.Text = "Undo(Z)";
             this.UndoButton.UseVisualStyleBackColor = true;
@@ -80,9 +82,9 @@
             // ClearButton
             // 
             this.ClearButton.Font = new System.Drawing.Font("Yu Gothic UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ClearButton.Location = new System.Drawing.Point(758, 12);
+            this.ClearButton.Location = new System.Drawing.Point(673, 12);
             this.ClearButton.Name = "ClearButton";
-            this.ClearButton.Size = new System.Drawing.Size(114, 47);
+            this.ClearButton.Size = new System.Drawing.Size(81, 47);
             this.ClearButton.TabIndex = 3;
             this.ClearButton.Text = "Clear(C)";
             this.ClearButton.UseVisualStyleBackColor = true;
@@ -91,9 +93,9 @@
             // SaveButton
             // 
             this.SaveButton.Font = new System.Drawing.Font("Yu Gothic UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.SaveButton.Location = new System.Drawing.Point(518, 12);
+            this.SaveButton.Location = new System.Drawing.Point(499, 12);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(114, 47);
+            this.SaveButton.Size = new System.Drawing.Size(81, 47);
             this.SaveButton.TabIndex = 4;
             this.SaveButton.Text = "Save(S)";
             this.SaveButton.UseVisualStyleBackColor = true;
@@ -103,7 +105,7 @@
             // 
             this.BackButton.Font = new System.Drawing.Font("Yu Gothic UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BackButton.ForeColor = System.Drawing.Color.Maroon;
-            this.BackButton.Location = new System.Drawing.Point(406, 12);
+            this.BackButton.Location = new System.Drawing.Point(387, 12);
             this.BackButton.Name = "BackButton";
             this.BackButton.Size = new System.Drawing.Size(50, 47);
             this.BackButton.TabIndex = 5;
@@ -115,7 +117,7 @@
             // 
             this.NextButton.Font = new System.Drawing.Font("Yu Gothic UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NextButton.ForeColor = System.Drawing.Color.Navy;
-            this.NextButton.Location = new System.Drawing.Point(462, 12);
+            this.NextButton.Location = new System.Drawing.Point(443, 12);
             this.NextButton.Name = "NextButton";
             this.NextButton.Size = new System.Drawing.Size(50, 47);
             this.NextButton.TabIndex = 6;
@@ -127,7 +129,7 @@
             // 
             this.pictureBox.Location = new System.Drawing.Point(13, 66);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox.Size = new System.Drawing.Size(113, 50);
             this.pictureBox.TabIndex = 7;
             this.pictureBox.TabStop = false;
             this.pictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseDown);
@@ -137,7 +139,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(252, 15);
+            this.label1.Location = new System.Drawing.Point(252, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 15);
             this.label1.TabIndex = 8;
@@ -146,7 +148,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(252, 39);
+            this.label2.Location = new System.Drawing.Point(323, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 15);
             this.label2.TabIndex = 9;
@@ -154,33 +156,52 @@
             // 
             // WidthTx
             // 
-            this.WidthTx.Location = new System.Drawing.Point(316, 36);
+            this.WidthTx.Location = new System.Drawing.Point(323, 36);
             this.WidthTx.Name = "WidthTx";
-            this.WidthTx.Size = new System.Drawing.Size(39, 23);
+            this.WidthTx.Size = new System.Drawing.Size(29, 23);
             this.WidthTx.TabIndex = 10;
             this.WidthTx.Text = "640";
             // 
             // ExtensionTx
             // 
-            this.ExtensionTx.Location = new System.Drawing.Point(316, 12);
+            this.ExtensionTx.Location = new System.Drawing.Point(252, 36);
             this.ExtensionTx.Name = "ExtensionTx";
-            this.ExtensionTx.Size = new System.Drawing.Size(83, 23);
+            this.ExtensionTx.Size = new System.Drawing.Size(65, 23);
             this.ExtensionTx.TabIndex = 11;
             this.ExtensionTx.Text = ".png";
             // 
             // HeightTx
             // 
-            this.HeightTx.Location = new System.Drawing.Point(360, 36);
+            this.HeightTx.Location = new System.Drawing.Point(351, 36);
             this.HeightTx.Name = "HeightTx";
-            this.HeightTx.Size = new System.Drawing.Size(39, 23);
+            this.HeightTx.Size = new System.Drawing.Size(30, 23);
             this.HeightTx.TabIndex = 12;
             this.HeightTx.Text = "480";
+            // 
+            // comboBox
+            // 
+            this.comboBox.FormattingEnabled = true;
+            this.comboBox.Location = new System.Drawing.Point(760, 36);
+            this.comboBox.Name = "comboBox";
+            this.comboBox.Size = new System.Drawing.Size(112, 23);
+            this.comboBox.TabIndex = 14;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(760, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 15);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Selected Class";
             // 
             // View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 711);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.comboBox);
             this.Controls.Add(this.HeightTx);
             this.Controls.Add(this.ExtensionTx);
             this.Controls.Add(this.WidthTx);
@@ -219,6 +240,8 @@
         private System.Windows.Forms.TextBox WidthTx;
         private System.Windows.Forms.TextBox ExtensionTx;
         private System.Windows.Forms.TextBox HeightTx;
+        private System.Windows.Forms.ComboBox comboBox;
+        private System.Windows.Forms.Label label3;
     }
 }
 

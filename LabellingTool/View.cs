@@ -1,12 +1,16 @@
 ﻿using System;
+using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using OpenCvSharp.Extensions;
 
-namespace LabelingTool
+namespace LabellingTool
 {
     public partial class View : Form
     {
         private bool _mouseMove;
+        private string _labelPath;
+        private string[] _labels;
 
         public View()
         {
@@ -18,6 +22,11 @@ namespace LabelingTool
             UndoButton.Enabled = false;
             ClearButton.Enabled = false;
             _mouseMove = false;
+
+            _labelPath = $"..\\..\\..\\classes.txt";
+            _labels = File.ReadAllLines(_labelPath).ToArray();
+            comboBox.Text = _labels[0];
+            comboBox.Items.AddRange(_labels.ToArray());
         }
 
         private void OpenDirButton_Click(object sender, EventArgs e)
@@ -26,7 +35,7 @@ namespace LabelingTool
             fbd.Description = "画像フォルダを選択";
             if (fbd.ShowDialog() == DialogResult.OK)
             {
-                var img = Processing.Initialize(fbd.SelectedPath, ExtensionTx.Text, int.Parse(WidthTx.Text), int.Parse(HeightTx.Text));
+                var img = Processing.Initialize(fbd.SelectedPath, ExtensionTx.Text, _labels, int.Parse(WidthTx.Text), int.Parse(HeightTx.Text));
                 pictureBox.Width = img.Width;
                 pictureBox.Height = img.Height;
                 pictureBox.Image = img.ToBitmap();
@@ -114,7 +123,9 @@ namespace LabelingTool
         {
             if (!_mouseMove) return;
             _mouseMove = false;
-            var img = Processing.SelectGoal(e.X, e.Y);
+            var index = comboBox.SelectedIndex;
+            if (index == -1) index = 0;
+            var img = Processing.SelectGoal(e.X, e.Y, index);
             pictureBox.Image = img.ToBitmap();
             UndoButton.Enabled = true;
             ClearButton.Enabled = true;
