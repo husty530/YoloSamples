@@ -51,6 +51,8 @@ Anaconda環境があれば、"[labelImg](https://github.com/tzutalin/labelImg)"�
   
 Anaconda環境の設定が面倒なら付属の"[LabellingTool](/LabelingTool)"でもできます(たぶん)。  
 LabellingToolディレクトリ内の"classes.txt"を事前に編集すれば自由にクラスラベルを変えられます。  
+キー操作もできます。(A = Back, D = Next, S = Save, C = Clear, Z = Undo)  
+本家よりちょっと簡単めにしたつもりです。  
   
 ![labelling](/labelling.png)  
   
