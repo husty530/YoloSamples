@@ -39,6 +39,7 @@ namespace LabellingTool
                 pictureBox.Width = img.Width;
                 pictureBox.Height = img.Height;
                 pictureBox.Image = img.ToBitmap();
+                ProgressCount_label.Text = $"{Processing.FrameNumber + 1} / {Processing.FileCount}";
                 SaveDirButton.Enabled = true;
                 BackButton.Enabled = false;
                 NextButton.Enabled = false;
@@ -64,6 +65,7 @@ namespace LabellingTool
         {
             var img = Processing.GoBack();
             pictureBox.Image = img.ToBitmap();
+            ProgressCount_label.Text = $"{Processing.FrameNumber + 1} / {Processing.FileCount}";
             NextButton.Enabled = true;
             if (Processing.FrameNumber == 0) BackButton.Enabled = false;
         }
@@ -72,6 +74,7 @@ namespace LabellingTool
         {
             var img = Processing.GoNext();
             pictureBox.Image = img.ToBitmap();
+            ProgressCount_label.Text = $"{Processing.FrameNumber + 1} / {Processing.FileCount}";
             BackButton.Enabled = true;
             if (Processing.FrameNumber == Processing.FileCount - 1) NextButton.Enabled = false;
         }
@@ -80,6 +83,8 @@ namespace LabellingTool
         {
             Processing.Save();
             SaveButton.Enabled = false;
+            if (Processing.FrameNumber != 0) BackButton.Enabled = true;
+            if (Processing.FrameNumber != Processing.FileCount - 1) NextButton.Enabled =true;
         }
 
         private void UndoButton_Click(object sender, EventArgs e)
@@ -108,6 +113,8 @@ namespace LabellingTool
             _mouseMove = true;
             var img = Processing.SelectStart(e.X, e.Y);
             pictureBox.Image = img.ToBitmap();
+            BackButton.Enabled = false;
+            NextButton.Enabled = false;
         }
 
         private void pictureBox_MouseMove(object sender, MouseEventArgs e)
@@ -140,6 +147,7 @@ namespace LabellingTool
                     if (BackButton.Enabled == false) break;
                     var img1 = Processing.GoBack();
                     pictureBox.Image = img1.ToBitmap();
+                    ProgressCount_label.Text = $"{Processing.FrameNumber + 1} / {Processing.FileCount}";
                     NextButton.Enabled = true;
                     if (Processing.FrameNumber == 0) BackButton.Enabled = false;
                     break;
@@ -147,6 +155,7 @@ namespace LabellingTool
                     if (NextButton.Enabled == false) break;
                     var img2 = Processing.GoNext();
                     pictureBox.Image = img2.ToBitmap();
+                    ProgressCount_label.Text = $"{Processing.FrameNumber + 1} / {Processing.FileCount}";
                     BackButton.Enabled = true;
                     if (Processing.FrameNumber == Processing.FileCount - 1) NextButton.Enabled = false;
                     break;
@@ -154,6 +163,8 @@ namespace LabellingTool
                     if (SaveButton.Enabled == false) break;
                     Processing.Save();
                     SaveButton.Enabled = false;
+                    if (Processing.FrameNumber != 0) BackButton.Enabled = true;
+                    if (Processing.FrameNumber != Processing.FileCount - 1) NextButton.Enabled = true;
                     break;
                 case "c":
                     if (ClearButton.Enabled == false) break;
@@ -163,7 +174,7 @@ namespace LabellingTool
                     ClearButton.Enabled = false;
                     SaveButton.Enabled = false;
                     break;
-                case "z":
+                case "x":
                     if (UndoButton.Enabled == false) break;
                     var img4 = Processing.RemoveLast();
                     pictureBox.Image = img4.ToBitmap();

@@ -43,6 +43,8 @@
             this.HeightTx = new System.Windows.Forms.TextBox();
             this.comboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.ProgressCount_label = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +53,7 @@
             this.OpenDirButton.Font = new System.Drawing.Font("Yu Gothic UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.OpenDirButton.Location = new System.Drawing.Point(12, 12);
             this.OpenDirButton.Name = "OpenDirButton";
-            this.OpenDirButton.Size = new System.Drawing.Size(114, 47);
+            this.OpenDirButton.Size = new System.Drawing.Size(78, 47);
             this.OpenDirButton.TabIndex = 0;
             this.OpenDirButton.Text = "Open Dir";
             this.OpenDirButton.UseVisualStyleBackColor = true;
@@ -60,11 +62,11 @@
             // SaveDirButton
             // 
             this.SaveDirButton.Font = new System.Drawing.Font("Yu Gothic UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.SaveDirButton.Location = new System.Drawing.Point(132, 12);
+            this.SaveDirButton.Location = new System.Drawing.Point(96, 12);
             this.SaveDirButton.Name = "SaveDirButton";
-            this.SaveDirButton.Size = new System.Drawing.Size(114, 47);
+            this.SaveDirButton.Size = new System.Drawing.Size(77, 47);
             this.SaveDirButton.TabIndex = 1;
-            this.SaveDirButton.Text = "Select Save Dir";
+            this.SaveDirButton.Text = "Save Dir";
             this.SaveDirButton.UseVisualStyleBackColor = true;
             this.SaveDirButton.Click += new System.EventHandler(this.SaveDirButton_Click);
             // 
@@ -75,7 +77,7 @@
             this.UndoButton.Name = "UndoButton";
             this.UndoButton.Size = new System.Drawing.Size(81, 47);
             this.UndoButton.TabIndex = 2;
-            this.UndoButton.Text = "Undo(Z)";
+            this.UndoButton.Text = "Undo(X)";
             this.UndoButton.UseVisualStyleBackColor = true;
             this.UndoButton.Click += new System.EventHandler(this.UndoButton_Click);
             // 
@@ -139,7 +141,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(252, 20);
+            this.label1.Location = new System.Drawing.Point(179, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 15);
             this.label1.TabIndex = 8;
@@ -148,7 +150,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(323, 20);
+            this.label2.Location = new System.Drawing.Point(254, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 15);
             this.label2.TabIndex = 9;
@@ -156,7 +158,7 @@
             // 
             // WidthTx
             // 
-            this.WidthTx.Location = new System.Drawing.Point(323, 36);
+            this.WidthTx.Location = new System.Drawing.Point(252, 36);
             this.WidthTx.Name = "WidthTx";
             this.WidthTx.Size = new System.Drawing.Size(29, 23);
             this.WidthTx.TabIndex = 10;
@@ -164,7 +166,7 @@
             // 
             // ExtensionTx
             // 
-            this.ExtensionTx.Location = new System.Drawing.Point(252, 36);
+            this.ExtensionTx.Location = new System.Drawing.Point(179, 36);
             this.ExtensionTx.Name = "ExtensionTx";
             this.ExtensionTx.Size = new System.Drawing.Size(65, 23);
             this.ExtensionTx.TabIndex = 11;
@@ -172,7 +174,7 @@
             // 
             // HeightTx
             // 
-            this.HeightTx.Location = new System.Drawing.Point(351, 36);
+            this.HeightTx.Location = new System.Drawing.Point(280, 36);
             this.HeightTx.Name = "HeightTx";
             this.HeightTx.Size = new System.Drawing.Size(30, 23);
             this.HeightTx.TabIndex = 12;
@@ -195,11 +197,31 @@
             this.label3.TabIndex = 15;
             this.label3.Text = "Selected Class";
             // 
+            // ProgressCount_label
+            // 
+            this.ProgressCount_label.AutoSize = true;
+            this.ProgressCount_label.Location = new System.Drawing.Point(316, 39);
+            this.ProgressCount_label.Name = "ProgressCount_label";
+            this.ProgressCount_label.Size = new System.Drawing.Size(30, 15);
+            this.ProgressCount_label.TabIndex = 16;
+            this.ProgressCount_label.Text = "0 / 0";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(316, 20);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(52, 15);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Progress";
+            // 
             // View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 711);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.ProgressCount_label);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBox);
             this.Controls.Add(this.HeightTx);
@@ -242,6 +264,8 @@
         private System.Windows.Forms.TextBox HeightTx;
         private System.Windows.Forms.ComboBox comboBox;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label ProgressCount_label;
+        private System.Windows.Forms.Label label4;
     }
 }
 
