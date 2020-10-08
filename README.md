@@ -55,7 +55,7 @@ LabellingToolディレクトリ内の"classes.txt"を事前に編集すれば自
 キー操作は全部左手におさまるようにしました。(A = Back, D = Next, S = Save, C = Clear, X = Undo)  
 本家の機能のミニマムをとった感じで、シンプルな使い勝手なのではないでしょうか(感想)。  
   
-![labelling](/labelling.png)  
+![labellingtool](/labellingtool.png)  
   
 ### GoogleDriveの編集  
   
