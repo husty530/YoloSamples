@@ -50,8 +50,9 @@ Anaconda環境があれば、"[labelImg](https://github.com/tzutalin/labelImg)"�
 最終的に画像名と同じ.txtファイルが出力されていればOK。  
   
 Anaconda環境の設定が面倒なら付属の"[LabellingTool](/LabelingTool)"でもできます(たぶん)。  
-こちらは1ラベルのアノテーションのみ可です。複数対応にアップグレードもできますが、めんどい。。  
-![labelling](/labeling.png)  
+LabellingToolディレクトリ内の"classes.txt"を事前に編集すれば自由にクラスラベルを変えられます。  
+  
+![labelling](/labelling.png)  
   
 ### GoogleDriveの編集  
   
