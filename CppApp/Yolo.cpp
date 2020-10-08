@@ -29,7 +29,7 @@ void Yolo::Init(const char* cfg, const char* names, const char* weights, cv::Siz
 }
 
 
-YoloResults Yolo::Run(Mat img) {
+void Yolo::Run(Mat img, YoloResults* results) {
 
     vector<Point> centers;
     vector<int> classIds;
@@ -89,11 +89,8 @@ YoloResults Yolo::Run(Mat img) {
         putText(img, label, Point(left, max(top, labelSize.height)), FONT_HERSHEY_SIMPLEX, 0.3, Scalar());
     }
 
-    YoloResults results;
-    results.outputImg = img;
-    results.centers = centers;
-    results.confidences = confidences;
-    results.boxes = boxes;
-
-    return results;
+    results->outputImg = img;
+    results->centers = centers;
+    results->confidences = confidences;
+    results->boxes = boxes;
 }

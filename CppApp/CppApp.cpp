@@ -14,7 +14,8 @@ int main()
     std::cout << "Procesing..." << std::endl;
 
     int count = 0;
-    YoloResults results = detector.Run(img);
+    YoloResults results;
+    detector.Run(img, &results);
     for (cv::Point center : results.centers)
     {
         std::cout << count << " : conf = " << (int)(results.confidences[count] * 100)

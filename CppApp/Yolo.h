@@ -24,7 +24,7 @@ private:
 public:
 
 	void Init(const char* cfg, const char* names, const char* weights, cv::Size size, float confThresh, float nmsThresh);
-	YoloResults Run(cv::Mat img);
+	void Run(cv::Mat img, YoloResults* results);
 
 };
 
