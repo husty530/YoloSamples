@@ -52,10 +52,10 @@ Anaconda環境があれば、"[labelImg](https://github.com/tzutalin/labelImg)"�
   
 Anaconda環境の設定が面倒なら付属の"[LabellingTool](/LabelingTool)"でもできます(たぶん)。  
 LabellingToolディレクトリ内の"classes.txt"を事前に編集すれば自由にクラスラベルを変えられます。  
-キー操作は全部左手におさまるようにしました。(A = Back, D = Next, S = Save, C = Clear, Z = Undo)  
+キー操作は全部左手におさまるようにしました。(A = Back, D = Next, S = Save, C = Clear, X = Undo)  
 本家の機能のミニマムをとった感じで、シンプルな使い勝手なのではないでしょうか(感想)。  
   
-![labelling](/labelling.png)  
+![labellingtool](/labellingtool.png)  
   
 ### GoogleDriveの編集  
   
