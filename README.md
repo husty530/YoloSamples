@@ -15,7 +15,7 @@
   
 # Demo(C++)  
   
-1. "[公式ページ](https://github.com/AlexeyAB/darknet)"から"yolov4.cfg", "coco.names", "yolov4.weights"をダウンロード
+1. "[AlexeyAB公式リポジトリ](https://github.com/AlexeyAB/darknet)"から"yolov4.cfg", "coco.names", "yolov4.weights"をダウンロード
 2. "[ココ](https://swallow-incubate.com/archives/blog/20200508/)"や"[ココ](https://kamino.hatenablog.com/entry/opencv_contrib_install)"を参考にopencv-contribをビルドする。(これがかなりダルイ)
 3. 環境変数の設定、インクルードディレクトリやリンカーの追加も上記のページを参考に行う。
 4. VisualStudioにて"CppApp"を"デバッグ"  
@@ -32,7 +32,7 @@
   
 # Demo(C#)   
   
-1. "[公式ページ](https://github.com/AlexeyAB/darknet)"から"yolov4.cfg", "coco.names", "yolov4.weights"をダウンロード
+1. "[AlexeyAB公式リポジトリ](https://github.com/AlexeyAB/darknet)"から"yolov4.cfg", "coco.names", "yolov4.weights"をダウンロード
 2. VisualStudioにて"CsApp"を"デバッグ"
 3. ダウンロードしたモデルのパスを書き込み、ボタンをポチポチ  
   
@@ -49,9 +49,9 @@ Anaconda環境があれば、"[labelImg](https://github.com/tzutalin/labelImg)"�
 "pre-defined-class"と"YOLO/PascalVOC"の設定を間違うとめっちゃ後悔します。  
 最終的に画像名と同じ.txtファイルが出力されていればOK。  
   
-Anaconda環境の設定が面倒なら付属の"[LabelingTool](/LabelingTool)"でもできます(たぶん)。  
+Anaconda環境の設定が面倒なら付属の"[LabellingTool](/LabelingTool)"でもできます(たぶん)。  
 こちらは1ラベルのアノテーションのみ可です。複数対応にアップグレードもできますが、めんどい。。  
-![labeling](/labeling.png)  
+![labelling](/labeling.png)  
   
 ### GoogleDriveの編集  
   
