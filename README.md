@@ -52,7 +52,7 @@ Anaconda環境があれば、"[labelImg](https://github.com/tzutalin/labelImg)"�
 "pre-defined-class"と"YOLO/PascalVOC"の設定を間違うとめっちゃ後悔します。  
 最終的に画像名と同じ.txtファイルが出力されていればOK。  
   
-Anaconda環境の設定が面倒なら付属の"[LabellingTool](/LabelingTool)"でもできます(たぶん)。  
+Anaconda環境の設定が面倒なら付属の"[LabellingTool](/LabelingTool)"でもできます。C#で動いています。  
 LabellingToolディレクトリ内の"classes.txt"を事前に編集すれば自由にクラスラベルを変えられます。  
 キー操作は全部左手におさまるようにしました。(A = Back, D = Next, S = Save, C = Clear, X = Undo)  
 本家の機能のミニマムをとった感じで、シンプルな使い勝手なのではないでしょうか(感想)。  
