@@ -104,7 +104,7 @@ names = data/obj.names
 backup = backup/
 ```  
   
-8. DEMOに書いた公式ページから"darknet/"に”yolov4.conv.137”を入れる
+8. Demoに書いた公式ページから"darknet/"に”yolov4.conv.137”を入れる
 9. "[process.py](/process.py)"内のフォルダ名を自分がデータを入れたドライブのフォルダ名にして、"darknet/data/"に入れる
 10. ここからColab。まず"ランタイムの設定変更"から"GPU"を選択しておく
 11. コンパイル → "process.py"(train-testの切り分け) → 学習(最初から)をポチポチするだけ。画面がザーッと流れ続けていたらうまくいっている。  
