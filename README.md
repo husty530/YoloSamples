@@ -4,9 +4,10 @@
   
 # Contents  
   
-[CppApp](/CppApp) ... C++で推論実行するアプリ  
-[CsApp](/CsApp) ... C#で推論実行するアプリ  
-[YoloSharp](/YoloSharp) ... C#のYOLO推論ライブラリ  
+[CppApp](/CppApp) ... C++で推論実行するアプリ。デバッグ用なので中身はカス。  
+[YoloPlusPlus](/YoloPlusPlus) ... C++の推論ライブラリ。  
+[CsApp](/CsApp) ... C#で推論実行するアプリ。  
+[YoloSharp](/YoloSharp) ... C#のYOLO推論ライブラリ。  
 [LabellingTool](/LabellingTool) ... C#で作ったラベリング用のツール  
 [Yolov4.ipynb](/Yolov4.ipynb) ... Google Colab用のノートブック  
 [process.py](/process.py) ... train-test-split用。Colabで使うと楽です。  
@@ -19,10 +20,31 @@
 　(リポジトリ本体をクローンする必要はありません。学習時にColabに取り込みます。)  
 2. "[ココ](https://swallow-incubate.com/archives/blog/20200508/)"や"[ココ](https://kamino.hatenablog.com/entry/opencv_contrib_install)"を参考にopencv-contribをビルドする。(CMakeを推奨。しかしこれがダルイ...)
 3. 環境変数の設定、インクルードディレクトリやリンカーの追加も上記のページを参考に行う。
-4. VisualStudioにて"CppApp"を開く
-5. 画像のパス、モデルファイルは必要に応じてコード内で指定する。  
+4. VisualStudioにて"YoloPlusPlus"をビルド
+5. "CppApp"を開く  
+6. 画像のパス、モデルファイルは必要に応じてコード内で指定する。  
   
-動画でやりたい場合は推論をループで呼びだしてください  
+呼び出す関数は2つだけですが、それぞれオプションがあります。  
+```
+void Init(const char* cfg, 
+          const char* names, 
+          const char* weights, 
+          cv::Size size = cv::Size(384, 288), 
+          float confThresh = 0.5, 
+          float nmsThresh = 0.3, 
+          CUDA cuda = Off);
+```
+第4引数以下はオプションです。BlobSizeは32の倍数ならだいたい何でもいいようです。  
+enum型のCUDAはOn or Offです。環境に合わせて変えてください。  
+  
+```
+void Run(cv::Mat& img, YoloResults& results, GraphicMode mode = BoxesWithLabels);
+```
+GraphicModeはNone, Points, Boxes, BoxesWithLabels の4種類です。画像の出力の仕方を選べるようにしました。  
+どれを選んでも中心と矩形の座標、クラスラベルといった数値の情報はすべて返ってきます(構造体YoloResultsに格納)。  
+基本的に参照でやりとりするので引数さえ揃えればOKな仕様にしています。
+  
+動画でやりたい場合は推論をループで呼びだしてください。  
 サンプル画像つけてますのでどうぞ。  
   
 ![Sample](/Sample.jpg)  
