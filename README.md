@@ -17,7 +17,7 @@
   
 1. [AlexeyAB公式リポジトリ](https://github.com/AlexeyAB/darknet)から"yolov4.cfg", "coco.names", "yolov4.weights"をダウンロード  
 　(リポジトリ本体をクローンする必要はありません。学習時にColabに取り込みます。)  
-2. "[ココ](https://swallow-incubate.com/archives/blog/20200508/)"や"[ココ](https://kamino.hatenablog.com/entry/opencv_contrib_install)"を参考にopencv-contribをビルドする。(これがかなりダルイ)
+2. "[ココ](https://swallow-incubate.com/archives/blog/20200508/)"や"[ココ](https://kamino.hatenablog.com/entry/opencv_contrib_install)"を参考にopencv-contribをビルドする。(CMakeを推奨。しかしこれがダルイ...)
 3. 環境変数の設定、インクルードディレクトリやリンカーの追加も上記のページを参考に行う。
 4. VisualStudioにて"CppApp"を開く
 5. 画像のパス、モデルファイルは必要に応じてコード内で指定する。  
@@ -52,7 +52,7 @@ Anaconda環境があれば、"[labelImg](https://github.com/tzutalin/labelImg)"�
 "pre-defined-class"と"YOLO/PascalVOC"の設定を間違うとめっちゃ後悔します。  
 最終的に画像名と同じ.txtファイルが出力されていればOK。  
   
-Anaconda環境の設定が面倒なら付属の"[LabellingTool](/LabelingTool)"でもできます(たぶん)。  
+Anaconda環境の設定が面倒なら付属の"[LabellingTool](/LabelingTool)"でもできます。C#で動いています。  
 LabellingToolディレクトリ内の"classes.txt"を事前に編集すれば自由にクラスラベルを変えられます。  
 キー操作は全部左手におさまるようにしました。(A = Back, D = Next, S = Save, C = Clear, X = Undo)  
 本家の機能のミニマムをとった感じで、シンプルな使い勝手なのではないでしょうか(感想)。  
