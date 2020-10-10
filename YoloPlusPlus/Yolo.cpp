@@ -1,8 +1,6 @@
 #define DLLEXPORT __declspec(dllexport)
 
 #include <fstream>
-#include <opencv2/opencv.hpp>
-#include <opencv2/dnn.hpp>
 #include "Yolo.h"
 
 using namespace std;
@@ -64,6 +62,12 @@ void Yolo::Run(Mat& img, YoloResults& results, GraphicMode mode)
 void Yolo::Process(Mat& img, YoloResults& results) 
 {
 
+    results.count = 0;
+    results.classIds.clear();
+    results.centers.clear();
+    results.confidences.clear();
+    results.boxes.clear();
+
     vector<int> classIds;
     vector<Rect2d> boxes;
     vector<float> confidences;
@@ -101,15 +105,15 @@ void Yolo::Process(Mat& img, YoloResults& results)
 
     MatShape indices;
     NMSBoxes(boxes, confidences, _confThresh, _nmsThresh, indices);
-    results.count = 0;
+    
     for (int i : indices)
     {
         Rect2d box = boxes[i];
+        results.count++;
         results.classIds.push_back(classIds[i]);
         results.centers.push_back(Point(box.x, box.y));
         results.confidences.push_back(confidences[i]);
         results.boxes.push_back(box);
-        results.count++;
     }
 
 }

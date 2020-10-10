@@ -16,7 +16,7 @@ int main()
 
     
     YoloResults results;
-    detector.Run(img, results);
+    detector.Run(img, results, Yolo::GraphicMode::Boxes);
 
     int count = 0;
     for (cv::Point center : results.centers)
