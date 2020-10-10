@@ -20,7 +20,7 @@
 1. [AlexeyAB公式リポジトリ](https://github.com/AlexeyAB/darknet)から"yolov4.cfg", "coco.names", "yolov4.weights"をダウンロード  
 　(リポジトリ本体をクローンする必要はありません。学習時にColabに取り込みます。)  
 2. "[ココ](https://swallow-incubate.com/archives/blog/20200508/)"や"[ココ](https://kamino.hatenablog.com/entry/opencv_contrib_install)"を参考にopencv-contribをビルドする。(CMakeを推奨。しかしこれがダルイ...)  
-　(YoloLibrary追加しました。これの.libと.hの場所さえ指定すればcontribなしでもできそう)
+　(YoloLibrary追加しました。これの.dll, .lib, .hの場所さえ指定すればcontribなしでもできそう)
 3. 環境変数の設定、インクルードディレクトリやリンカーの追加も上記のページを参考に行う。
 4. VisualStudioにて"YoloPlusPlus"をビルド 
 5. "CppApp"を開く  
