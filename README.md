@@ -6,6 +6,7 @@
   
 [CppApp](/CppApp) ... C++で推論実行するアプリ。デバッグ用なので中身はカス。  
 [YoloPlusPlus](/YoloPlusPlus) ... C++の推論ライブラリ。  
+[YoloLibrary](/YoloLibrary) ... C++のコンパイル済みライブラリ。  
 [CsApp](/CsApp) ... C#で推論実行するアプリ。  
 [YoloSharp](/YoloSharp) ... C#のYOLO推論ライブラリ。  
 [LabellingTool](/LabellingTool) ... C#で作ったラベリング用のツール  
@@ -18,9 +19,10 @@
   
 1. [AlexeyAB公式リポジトリ](https://github.com/AlexeyAB/darknet)から"yolov4.cfg", "coco.names", "yolov4.weights"をダウンロード  
 　(リポジトリ本体をクローンする必要はありません。学習時にColabに取り込みます。)  
-2. "[ココ](https://swallow-incubate.com/archives/blog/20200508/)"や"[ココ](https://kamino.hatenablog.com/entry/opencv_contrib_install)"を参考にopencv-contribをビルドする。(CMakeを推奨。しかしこれがダルイ...)
+2. "[ココ](https://swallow-incubate.com/archives/blog/20200508/)"や"[ココ](https://kamino.hatenablog.com/entry/opencv_contrib_install)"を参考にopencv-contribをビルドする。(CMakeを推奨。しかしこれがダルイ...)  
+　(YoloLibrary追加しました。これの.libと.hの場所さえ指定すればcontribなしでもできそう)
 3. 環境変数の設定、インクルードディレクトリやリンカーの追加も上記のページを参考に行う。
-4. VisualStudioにて"YoloPlusPlus"をビルド
+4. VisualStudioにて"YoloPlusPlus"をビルド 
 5. "CppApp"を開く  
 6. 画像のパス、モデルファイルは必要に応じてコード内で指定する。  
   
