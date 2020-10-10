@@ -84,14 +84,14 @@ namespace YoloSharp
                 var box = boxes[i];
                 selectedBoxes.Add(box);
                 centers.Add(new Point(box.X, box.Y));
-                Draw(image, classIds[i], confidences[i], probabilities[i], box.X, box.Y, box.Width, box.Height);
+                Draw(image, classIds[i], confidences[i], box.X, box.Y, box.Width, box.Height);
             }
             return (image, centers, indices, confidences, selectedBoxes);
         }
 
-        private static void Draw(Mat image, int classes, float confidence, float probability, double centerX, double centerY, double width, double height)
+        private static void Draw(Mat image, int classes, float confidence, double centerX, double centerY, double width, double height)
         {
-            var label = $" {_labels[classes]} {probability * 100:0.00}%";
+            var label = $" {_labels[classes]} {confidence * 100:0.00}%";
             Console.WriteLine($"confidence {confidence * 100:0.00}% , {label}");
             var x1 = (centerX - width / 2) < 0 ? 0 : centerX - width / 2;
             image.Rectangle(new Point(x1, centerY - height / 2), new Point(centerX + width / 2, centerY + height / 2), Colors[classes], 1);
