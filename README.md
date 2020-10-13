@@ -7,7 +7,7 @@
 [CppApp](/CppApp) ... C++で推論実行するアプリ。デバッグ用なので中身はカス。  
 [YoloPlusPlus](/YoloPlusPlus) ... C++の推論ライブラリ。  
 [YoloLibrary](/YoloLibrary) ... C++のコンパイル済みライブラリ。  
-[CsApp](/CsApp) ... C#で推論実行するアプリ。  
+[CsApp](/CsApp) ... C#で推論実行するアプリ。すぐできます。  
 [YoloSharp](/YoloSharp) ... C#のYOLO推論ライブラリ。  
 [coco.names](/coco.names), [yolov4.cfg](/yolov4.cfg) ... モデルファイル3点セット中の2つ。weightsだけは重たいので各自ダウンロード  
 [LabellingTool](/LabellingTool) ... C#で作ったラベリング用のツール  
