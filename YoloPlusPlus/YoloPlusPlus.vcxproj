@@ -126,7 +126,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>C:\opencv_build\install\include;C:\Users\ユーザー\source\repos\YoloSamples\YoloPlusPlus</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\opencv_build\install\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -147,7 +147,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>C:\opencv_build\install\include;C:\Users\ユーザー\source\repos\YoloSamples\YoloPlusPlus</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\opencv_build\install\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
