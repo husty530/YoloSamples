@@ -14,6 +14,18 @@
 [Yolov4.ipynb](/Yolov4.ipynb) ... Google Colab用のノートブック  
 [process.py](/process.py) ... train-test-split用。Colabで使うと楽です。  
   
+---  
+  
+# YOLOとは  
+[本家のサイト](https://pjreddie.com/darknet/)を見ていただくのが最も早いかと。  
+あるいは、今回用いるものはほとんど[AlexeyAB氏リポジトリ](https://github.com/AlexeyAB/darknet)から拝借しておりますので、詳しい部分はそちらを参照ください。  
+  
+すごく雑に言うと、YOLOとは物体検出手法の一種で、もともとdarknetというCで書かれたフレームワークで動くものです。  
+それをこの度はC++およびC#からOpenCVのDNNモジュールで動かす、というコンセプトになっております。  
+ネットの情報ではJupyterNotebookで動かすものがほとんどですが、C系の言語に組み込むのが意外と苦悶するところだと思ったのでこのようなものを公開しました。  
+  
+いくつかサンプルをつけました。何も設定しなくても動くのはC#のやつなので、すぐに動かして遊びたい方はC#からご利用ください。  
+  
 ---
   
 # Demo(C++)  
