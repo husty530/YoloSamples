@@ -9,6 +9,7 @@
 [YoloLibrary](/YoloLibrary) ... C++のコンパイル済みライブラリ。  
 [CsApp](/CsApp) ... C#で推論実行するアプリ。  
 [YoloSharp](/YoloSharp) ... C#のYOLO推論ライブラリ。  
+[coco.names](/coco.names), [yolov4.cfg](/yolov4.cfg) ... モデルファイル3点セット中の2つ。weightsだけは重たいので各自ダウンロード  
 [LabellingTool](/LabellingTool) ... C#で作ったラベリング用のツール  
 [Yolov4.ipynb](/Yolov4.ipynb) ... Google Colab用のノートブック  
 [process.py](/process.py) ... train-test-split用。Colabで使うと楽です。  
@@ -17,7 +18,7 @@
   
 # Demo(C++)  
   
-1. [AlexeyAB公式リポジトリ](https://github.com/AlexeyAB/darknet)から"yolov4.cfg", "coco.names", "yolov4.weights"をダウンロード  
+1. [AlexeyAB公式リポジトリ](https://github.com/AlexeyAB/darknet)から"yolov4.weights"をダウンロード  
 　(リポジトリ本体をクローンする必要はありません。学習時にColabに取り込みます。)  
 2. "[ココ](https://swallow-incubate.com/archives/blog/20200508/)"や"[ココ](https://kamino.hatenablog.com/entry/opencv_contrib_install)"を参考にopencv-contribをビルドする。(CMakeを推奨。しかしこれがダルイ...)  
 3. 環境変数の設定、インクルードディレクトリやリンカーの追加も上記のページを参考に行う。
@@ -25,7 +26,7 @@
 　(コンパイル済みのYoloLibraryを追加しました。これの.dll, .lib, .hの場所さえ指定すればできそう)  
 　(動作確認はとれていません。読めない場合は各々の環境で再ビルドを。)  
 5. "CppApp"を開く  
-6. 画像のパス、モデルファイルは必要に応じてコード内で指定する。  
+6. 画像のパス、モデルファイル(coco.names, yolov4.cfg, yolov4.weights)は必要に応じてコード内で指定する。  
   
 呼び出す関数は2つだけですが、それぞれオプションがあります。  
 ```
@@ -60,8 +61,8 @@ GraphicModeはNone, Points, Boxes, BoxesWithLabels の4種類です。画像の�
   
 # Demo(C#)   
   
-1. [AlexeyAB公式リポジトリ](https://github.com/AlexeyAB/darknet)から"yolov4.cfg", "coco.names", "yolov4.weights"をダウンロード
-2. VisualStudioにて"CsApp"を"デバッグ"
+1. [AlexeyAB公式リポジトリ](https://github.com/AlexeyAB/darknet)から"yolov4.weights"をダウンロード
+2. names, cfg, weightsの3点セットをどこかしらに置いて、VisualStudioにて"CsApp"を"デバッグ"
 3. ダウンロードしたモデルのパスを書き込み、ボタンをポチポチ  
   
 ![csSample](/csSample.png)
