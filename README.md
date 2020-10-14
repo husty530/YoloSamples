@@ -43,6 +43,13 @@
 2. names, cfg, weightsの3点セットをどこかしらに置いて、VisualStudioにて"CsApp"を"デバッグ"
 3. テキストボックスにパスを書き込み、ボタンをポチポチ。チョーカンタン！  
   
+動画でやりたい場合は推論をループで呼びだしてください。  
+サンプル画像つけてますのでどうぞ。  
+  
+![Sample](/Sample.jpg)  
+  
+うまくいけばこんな感じ↓  
+  
 ![csSample](/csSample.png)
   
 ---  
@@ -84,10 +91,6 @@ GraphicModeはNone, Points, Boxes, BoxesWithLabels の4種類です。画像の�
   
 動画でやりたい場合は推論をループで呼びだしてください。  
 サンプル画像つけてますのでどうぞ。  
-  
-![Sample](/Sample.jpg)  
-  
-うまくいけばこんな感じ↓  
   
 ![cppSample](/cppSample.png)  
   
