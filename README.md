@@ -28,6 +28,16 @@
   
 ---
   
+# Demo(C#)   
+  
+1. [AlexeyAB公式リポジトリ](https://github.com/AlexeyAB/darknet)から"yolov4.weights"をダウンロード
+2. names, cfg, weightsの3点セットをどこかしらに置いて、VisualStudioにて"CsApp"を"デバッグ"
+3. テキストボックスにパスを書き込み、ボタンをポチポチ。チョーカンタン。  
+  
+![csSample](/csSample.png)
+  
+---  
+  
 # Demo(C++)  
   
 1. [AlexeyAB公式リポジトリ](https://github.com/AlexeyAB/darknet)から"yolov4.weights"をダウンロード  
@@ -72,17 +82,7 @@ GraphicModeはNone, Points, Boxes, BoxesWithLabels の4種類です。画像の�
   
 ![cppSample](/cppSample.png)  
   
----
-  
-# Demo(C#)   
-  
-1. [AlexeyAB公式リポジトリ](https://github.com/AlexeyAB/darknet)から"yolov4.weights"をダウンロード
-2. names, cfg, weightsの3点セットをどこかしらに置いて、VisualStudioにて"CsApp"を"デバッグ"
-3. テキストボックスにパスを書き込み、ボタンをポチポチ。チョーカンタン。  
-  
-![csSample](/csSample.png)
-  
----
+---  
   
 # Train  
   
