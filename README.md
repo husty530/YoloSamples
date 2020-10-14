@@ -16,7 +16,15 @@
   
 ---  
   
-# YOLOとは  
+# Preparation
+* Windows10
+* VisualStudio2019 -- .NETデスクトップ開発、C++デスクトップ開発
+* Googleアカウント(学習時にDriveとColabを使います)  
+* 画像(お好みで)  
+  
+--- 
+  
+# About YOLO  
 [本家のサイト](https://pjreddie.com/darknet/)を見ていただくのが最も早いかと。  
 あるいは、今回用いるものはほとんど[AlexeyAB氏リポジトリ](https://github.com/AlexeyAB/darknet)から拝借しておりますので、詳しい部分はそちらを参照ください。  
   
