@@ -24,7 +24,7 @@
   
 --- 
   
-# About YOLO  
+# About "YOLO"  
 [本家のサイト](https://pjreddie.com/darknet/)を見ていただくのが最も早いかと。  
 あるいは、今回用いるものはほとんど[AlexeyAB氏リポジトリ](https://github.com/AlexeyAB/darknet)から拝借しておりますので、詳しい部分はそちらを参照ください。  
   
@@ -93,7 +93,7 @@ GraphicModeはNone, Points, Boxes, BoxesWithLabels の4種類です。画像の�
   
 ---  
   
-# Train  
+# How To Train  
   
 ### ラベリング作業  
   
@@ -139,7 +139,7 @@ backup = backup/
   
 ---
   
-# Test  
+# How To Test  
   
 Demoと同じです。必要なファイルは"yolov4-obj-test.cfg", "obj.names", "yolov4-obj_final.weights"。  
 これらを差し替えてアプリケーションを実行してみましょう。  
