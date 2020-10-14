@@ -41,7 +41,7 @@
 1. [AlexeyAB公式リポジトリ](https://github.com/AlexeyAB/darknet)から"yolov4.weights"をダウンロード  
 　(リポジトリ本体をクローンする必要はありません。)  
 2. names, cfg, weightsの3点セットをどこかしらに置いて、VisualStudioにて"CsApp"を"デバッグ"
-3. テキストボックスにパスを書き込み、ボタンをポチポチ。チョーカンタン。  
+3. テキストボックスにパスを書き込み、ボタンをポチポチ。チョーカンタン！  
   
 ![csSample](/csSample.png)
   
