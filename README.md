@@ -101,7 +101,7 @@ LabellingToolディレクトリ内の"classes.txt"を事前に編集すれば自
   
 ![labellingtool](/labellingtool.png)  
   
-### GoogleDriveの編集  
+### GoogleDriveの編集およびGoogleColabの操作  
   
 Colabではドライブをマウントしてデータを扱います。  
 以下、手順どおりに進めてください。  
