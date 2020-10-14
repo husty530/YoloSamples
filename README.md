@@ -106,7 +106,7 @@ LabellingToolディレクトリ内の"classes.txt"を事前に編集すれば自
 Colabではドライブをマウントしてデータを扱います。  
 以下、手順どおりに進めてください。  
   
-1. "[Yolov4.ipynb](/Yolov4.ipynb)"を開き、ドライブをマウントする
+1. GoogleColabolatoryにて"[Yolov4.ipynb](/Yolov4.ipynb)"を開き、自分のドライブをマウントする
 2. 1つ目のセルでドライブにAlexeyAB/darknetのリポジトリをクローンする
 3. ここからドライブ内の作業。"darknet/data/"にフォルダを作成し、作成した画像およびラベルデータをすべて入れる
 4. "Makefile" ... GPU,CUDNN,CUDNN_HALF,OPENCVの数値を1に変える
