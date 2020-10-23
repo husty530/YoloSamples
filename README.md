@@ -39,8 +39,7 @@
   
 # Demo(C#)   
   
-1. [AlexeyAB公式リポジトリ](https://github.com/AlexeyAB/darknet)から"yolov4.weights"をダウンロード  
-　(リポジトリ本体をクローンする必要はありません。)  
+1. [yolov4.weights](https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v3_optimal/yolov4.weights)をダウンロード  
 2. names, cfg, weightsの3点セットをどこかしらに置いて、VisualStudioにて"CsApp"を"デバッグ"
 3. テキストボックスにパスを書き込み、ボタンをポチポチ。チョーカンタン！  
   
@@ -57,8 +56,7 @@
   
 # Demo(C++)  
   
-1. [AlexeyAB公式リポジトリ](https://github.com/AlexeyAB/darknet)から"yolov4.weights"をダウンロード  
-　(リポジトリ本体をクローンする必要はありません。)  
+1. [yolov4.weights](https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v3_optimal/yolov4.weights)をダウンロード  
 2. "[ココ](https://swallow-incubate.com/archives/blog/20200508/)"や"[ココ](https://kamino.hatenablog.com/entry/opencv_contrib_install)"を参考にopencv-contribをビルドする。  
 　(CMakeを推奨。しかしこれがダルイ...)  
 　(どうやらバージョン依存があるようなので4.4.0を使うようにしてください)  
