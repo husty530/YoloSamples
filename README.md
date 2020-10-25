@@ -7,25 +7,66 @@
 [CppApp](/CppApp) ... C++で推論実行するアプリ。デバッグ用なので中身はカス。  
 [YoloPlusPlus](/YoloPlusPlus) ... C++の推論ライブラリ。  
 [YoloLibrary](/YoloLibrary) ... C++のコンパイル済みライブラリ。  
-[CsApp](/CsApp) ... C#で推論実行するアプリ。  
+[CsApp](/CsApp) ... C#で推論実行するアプリ。すぐできます。  
 [YoloSharp](/YoloSharp) ... C#のYOLO推論ライブラリ。  
+[coco.names](/coco.names), [yolov4.cfg](/yolov4.cfg) ... モデルファイル3点セット中の2つ。weightsだけは重たいので各自ダウンロード  
 [LabellingTool](/LabellingTool) ... C#で作ったラベリング用のツール  
 [Yolov4.ipynb](/Yolov4.ipynb) ... Google Colab用のノートブック  
 [process.py](/process.py) ... train-test-split用。Colabで使うと楽です。  
   
+---  
+  
+# Preparation
+* Windows10
+* VisualStudio2019 -- .NETデスクトップ開発、C++デスクトップ開発
+* Googleアカウント(学習時にDriveとColabを使います)  
+* 画像(お好みで)  
+  
+--- 
+  
+# About "YOLO"  
+[本家のサイト](https://pjreddie.com/darknet/)を見ていただくのが最も早いかと。  
+あるいは、今回用いるものはほとんど[AlexeyAB氏リポジトリ](https://github.com/AlexeyAB/darknet)から拝借しておりますので、詳しい部分はそちらを参照ください。  
+  
+すごく雑に言うと、YOLOとは物体検出手法の一種で、もともとdarknetというCで書かれたフレームワークで動くものです。  
+それをこの度はC++およびC#からOpenCVのDNNモジュールで動かす、というコンセプトになっております。  
+本当にOpenCV様の底力には頭が上がりませぬ。  
+ネットの情報ではJupyterNotebookで動かすものがほとんどですが、C系の言語に組み込むのが意外と苦悶するところだと思ったのでこのようなものを公開しました。  
+  
+いくつかサンプルをつけました。何も設定しなくても動くのはC#のやつなので、すぐに動かして遊びたい方はC#からご利用ください。  
+  
 ---
+  
+# Demo(C#)   
+  
+1. [yolov4.weights](https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v3_optimal/yolov4.weights)をダウンロード  
+2. names, cfg, weightsの3点セットをどこかしらに置いて、VisualStudioにて"CsApp"を"デバッグ"
+3. テキストボックスにパスを書き込み、ボタンをポチポチ。チョーカンタン！  
+  
+動画でやりたい場合は推論をループで呼びだしてください。  
+サンプル画像つけてますのでどうぞ。  
+  
+![Sample](/Sample.jpg)  
+  
+うまくいけばこんな感じ↓  
+  
+![csSample](/csSample.png)
+  
+---  
   
 # Demo(C++)  
   
-1. [AlexeyAB公式リポジトリ](https://github.com/AlexeyAB/darknet)から"yolov4.cfg", "coco.names", "yolov4.weights"をダウンロード  
-　(リポジトリ本体をクローンする必要はありません。学習時にColabに取り込みます。)  
-2. "[ココ](https://swallow-incubate.com/archives/blog/20200508/)"や"[ココ](https://kamino.hatenablog.com/entry/opencv_contrib_install)"を参考にopencv-contribをビルドする。(CMakeを推奨。しかしこれがダルイ...)  
+1. [yolov4.weights](https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v3_optimal/yolov4.weights)をダウンロード  
+2. "[ココ](https://swallow-incubate.com/archives/blog/20200508/)"や"[ココ](https://kamino.hatenablog.com/entry/opencv_contrib_install)"を参考にopencv-contribをビルドする。  
+　(CMakeを推奨。しかしこれがダルイ...)  
+　(どうやらバージョン依存があるようなので4.4.0を使うようにしてください)  
 3. 環境変数の設定、インクルードディレクトリやリンカーの追加も上記のページを参考に行う。
 4. VisualStudioにて"YoloPlusPlus"をビルド  
 　(コンパイル済みのYoloLibraryを追加しました。これの.dll, .lib, .hの場所さえ指定すればできそう)  
+　(.dll → exeと同じ階層、.lib → 追加の依存ライブラリ、.h → 追加のインクルードディレクトリでパスを通す)  
 　(動作確認はとれていません。読めない場合は各々の環境で再ビルドを。)  
 5. "CppApp"を開く  
-6. 画像のパス、モデルファイルは必要に応じてコード内で指定する。  
+6. 画像のパス、モデルファイル(coco.names, yolov4.cfg, yolov4.weights)は必要に応じてコード内で指定する。  
   
 呼び出す関数は2つだけですが、それぞれオプションがあります。  
 ```
@@ -50,25 +91,11 @@ GraphicModeはNone, Points, Boxes, BoxesWithLabels の4種類です。画像の�
 動画でやりたい場合は推論をループで呼びだしてください。  
 サンプル画像つけてますのでどうぞ。  
   
-![Sample](/Sample.jpg)  
-  
-うまくいけばこんな感じ↓  
-  
 ![cppSample](/cppSample.png)  
   
----
+---  
   
-# Demo(C#)   
-  
-1. [AlexeyAB公式リポジトリ](https://github.com/AlexeyAB/darknet)から"yolov4.cfg", "coco.names", "yolov4.weights"をダウンロード
-2. VisualStudioにて"CsApp"を"デバッグ"
-3. ダウンロードしたモデルのパスを書き込み、ボタンをポチポチ  
-  
-![csSample](/csSample.png)
-  
----
-  
-# Train  
+# How To Train  
   
 ### ラベリング作業  
   
@@ -84,12 +111,12 @@ LabellingToolディレクトリ内の"classes.txt"を事前に編集すれば自
   
 ![labellingtool](/labellingtool.png)  
   
-### GoogleDriveの編集  
+### GoogleDriveの編集およびGoogleColabの操作  
   
 Colabではドライブをマウントしてデータを扱います。  
 以下、手順どおりに進めてください。  
   
-1. "[Yolov4.ipynb](/Yolov4.ipynb)"を開き、ドライブをマウントする
+1. GoogleColabolatoryにて"[Yolov4.ipynb](/Yolov4.ipynb)"を開き、自分のドライブをマウントする
 2. 1つ目のセルでドライブにAlexeyAB/darknetのリポジトリをクローンする
 3. ここからドライブ内の作業。"darknet/data/"にフォルダを作成し、作成した画像およびラベルデータをすべて入れる
 4. "Makefile" ... GPU,CUDNN,CUDNN_HALF,OPENCVの数値を1に変える
@@ -114,7 +141,7 @@ backup = backup/
   
 ---
   
-# Test  
+# How To Test  
   
 Demoと同じです。必要なファイルは"yolov4-obj-test.cfg", "obj.names", "yolov4-obj_final.weights"。  
 これらを差し替えてアプリケーションを実行してみましょう。  
