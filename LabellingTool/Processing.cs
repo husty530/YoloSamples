@@ -11,41 +11,64 @@ namespace LabellingTool
         private static List<(Rect Rect, int LabelIndex)>[] _items;
         private static Point _temp;
         private static Mat _image;
-        private static string[] _filePaths;
+        private static string[] _imgPaths;
         private static Scalar[] _colors;
-
-        public static string SaveDirectory { set; get; }
+        private static string _saveDirectory;
         public static int FrameNumber { set; get; }
-        public static int FileCount => _filePaths.Length;
+        public static int FileCount => _imgPaths.Length;
         public static int RectCount => _items[FrameNumber].Count;
 
-        public static Mat Initialize(string dir, string ext, string[] labels, int width, int height)
+        public static Mat Initialize(string dir, string saveDir, string[] labels, int width, int height)
         {
             FrameNumber = 0;
+            _saveDirectory = saveDir;
             _size = new Size(width, height);
-            _filePaths = Directory.GetFiles(dir, $"*{ext}");
-            _items = new List<(Rect, int)>[_filePaths.Length];
-            if (_filePaths.Length == 0) return new Mat(height, width, MatType.CV_8U, 0);
+            var imgPaths = new List<string>();
+            imgPaths.AddRange(Directory.GetFiles(dir, $"*.png"));
+            imgPaths.AddRange(Directory.GetFiles(dir, $"*.PNG"));
+            imgPaths.AddRange(Directory.GetFiles(dir, $"*.jpg"));
+            imgPaths.AddRange(Directory.GetFiles(dir, $"*.jpeg"));
+            imgPaths.AddRange(Directory.GetFiles(dir, $"*.JPG"));
+            _imgPaths = imgPaths.ToArray();
+            _items = new List<(Rect, int)>[_imgPaths.Length];
+            if (_imgPaths.Length == 0) return new Mat(height, width, MatType.CV_8U, 0);
             _colors = Enumerable.Repeat(false, labels.Length).Select(i => Scalar.RandomColor()).ToArray();
-            for (int i = 0; i < _filePaths.Length; i++)
+            for (int i = 0; i < _imgPaths.Length; i++)
             {
                 _items[i] = new List<(Rect, int)>();
+                var labelPath = Path.ChangeExtension(_imgPaths[i], ".txt");
+                if (File.Exists(labelPath))
+                {
+                    using(var sr = new StreamReader(labelPath))
+                    {
+                        while (sr.Peek() != -1)
+                        {
+                            var str = sr.ReadLine().Split(" ");
+                            var label = int.Parse(str[0]);
+                            var w = (int)(double.Parse(str[3]) * _size.Width);
+                            var h = (int)(double.Parse(str[4]) * _size.Height);
+                            var l = (int)(double.Parse(str[1]) * _size.Width) - w / 2;
+                            var t = (int)(double.Parse(str[2]) * _size.Height) - h / 2;
+                            _items[i].Add((new Rect(l, t, w, h), label));
+                        }
+                    }
+                }
             }
-            _image = new Mat(_filePaths[0]);
-            Cv2.Resize(_image, _image, _size);
+            _image = new Mat(_imgPaths[0]);
+            DrawAll(ref _image);
             return _image;
         }
 
         public static Mat GoBack()
         {
-            _image = new Mat(_filePaths[--FrameNumber]);
+            _image = new Mat(_imgPaths[--FrameNumber]);
             DrawAll(ref _image);
             return _image;
         }
 
         public static Mat GoNext()
         {
-            _image = new Mat(_filePaths[++FrameNumber]);
+            _image = new Mat(_imgPaths[++FrameNumber]);
             DrawAll(ref _image);
             return _image;
         }
@@ -88,8 +111,8 @@ namespace LabellingTool
 
         public static void Save()
         {
-            var filename = Path.GetFileNameWithoutExtension(_filePaths[FrameNumber]);
-            using (var sw = new StreamWriter($"{SaveDirectory}\\{filename}.txt", false))
+            var filename = Path.GetFileNameWithoutExtension(_imgPaths[FrameNumber]);
+            using (var sw = new StreamWriter($"{_saveDirectory}\\{filename}.txt", false))
             {
                 foreach (var item in _items[FrameNumber])
                 {
@@ -104,7 +127,7 @@ namespace LabellingTool
 
         public static Mat Clear()
         {
-            _image = new Mat(_filePaths[FrameNumber]);
+            _image = new Mat(_imgPaths[FrameNumber]);
             Cv2.Resize(_image, _image, _size);
             _items[FrameNumber].Clear();
             return _image;
@@ -113,7 +136,7 @@ namespace LabellingTool
         public static Mat RemoveLast()
         {
             _items[FrameNumber].RemoveAt(_items[FrameNumber].Count - 1);
-            _image = new Mat(_filePaths[FrameNumber]);
+            _image = new Mat(_imgPaths[FrameNumber]);
             DrawAll(ref _image);
             return _image;
         }
@@ -123,7 +146,7 @@ namespace LabellingTool
             Cv2.Resize(img, img, _size);
             foreach (var item in _items[FrameNumber])
             {
-                Cv2.Rectangle(img, item.Rect, _colors[item.LabelIndex]);
+                Cv2.Rectangle(img, item.Rect, _colors[item.LabelIndex], 2);
             }
         }
     }

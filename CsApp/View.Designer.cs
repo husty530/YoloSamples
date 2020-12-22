@@ -128,7 +128,7 @@
             this.CfgTx.Name = "CfgTx";
             this.CfgTx.Size = new System.Drawing.Size(141, 23);
             this.CfgTx.TabIndex = 8;
-            this.CfgTx.Text = "D:\\\\YOLOv4\\\\yolov4.cfg";
+            this.CfgTx.Text = "C:\\\\Users\\\\yamataku1998\\\\Desktop\\\\pumpkin\\\\pumpKinect.cfg";
             // 
             // NamesTx
             // 
@@ -136,7 +136,7 @@
             this.NamesTx.Name = "NamesTx";
             this.NamesTx.Size = new System.Drawing.Size(141, 23);
             this.NamesTx.TabIndex = 9;
-            this.NamesTx.Text = "D:\\\\YOLOv4\\\\coco.names";
+            this.NamesTx.Text = "C:\\\\Users\\\\yamataku1998\\\\Desktop\\\\pumpkin\\\\pumpKinect.names";
             // 
             // WeightsTx
             // 
@@ -144,7 +144,7 @@
             this.WeightsTx.Name = "WeightsTx";
             this.WeightsTx.Size = new System.Drawing.Size(141, 23);
             this.WeightsTx.TabIndex = 10;
-            this.WeightsTx.Text = "D:\\\\YOLOv4\\\\yolov4.weights";
+            this.WeightsTx.Text = "C:\\\\Users\\\\yamataku1998\\\\Desktop\\\\pumpkin\\\\pumpKinect.weights";
             // 
             // label6
             // 

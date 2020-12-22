@@ -36,7 +36,7 @@ namespace CsApp
             var nmsThresh = float.Parse(NmsTx.Text);
             if (!File.Exists(cfgPath) || !File.Exists(namesPath) || !File.Exists(weightsPath)) return;
             _detector = new Detector();
-            _detector.InitializeDetector(cfgPath, namesPath, weightsPath, new Size(384, 288), confThresh, nmsThresh);
+            _detector.InitializeDetector(cfgPath, namesPath, weightsPath, new Size(320, 288), confThresh, nmsThresh);
             OpenButton.Enabled = true;
             RunButton.Enabled = false;
         }
@@ -50,7 +50,7 @@ namespace CsApp
                 var ext = Path.GetExtension(op.FileName);
                 if (ext != ".jpg" && ext != ".png") return;
                 img = new Mat(op.FileName);
-                Cv2.Resize(img, img, new Size(640, 480));
+                Cv2.Resize(img, img, new Size(320, 288));
                 pictureBox.Image = img.ToBitmap();
                 RunButton.Enabled = true;
             }

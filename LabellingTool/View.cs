@@ -15,49 +15,41 @@ namespace LabellingTool
         public View()
         {
             InitializeComponent();
-            SaveDirButton.Enabled = false;
             BackButton.Enabled = false;
             NextButton.Enabled = false;
             SaveButton.Enabled = false;
             UndoButton.Enabled = false;
             ClearButton.Enabled = false;
             _mouseMove = false;
-
             _labelPath = $"..\\..\\..\\classes.txt";
             _labels = File.ReadAllLines(_labelPath).ToArray();
             comboBox.Text = _labels[0];
             comboBox.Items.AddRange(_labels.ToArray());
         }
 
-        private void OpenDirButton_Click(object sender, EventArgs e)
+        private void StartButton_Click(object sender, EventArgs e)
         {
-            var fbd = new FolderBrowserDialog();
-            fbd.Description = "画像フォルダを選択";
-            if (fbd.ShowDialog() == DialogResult.OK)
+            var fbd1 = new FolderBrowserDialog();
+            fbd1.Description = "画像フォルダを選択";
+            if (fbd1.ShowDialog() == DialogResult.OK)
             {
-                var img = Processing.Initialize(fbd.SelectedPath, ExtensionTx.Text, _labels, int.Parse(WidthTx.Text), int.Parse(HeightTx.Text));
-                pictureBox.Width = img.Width;
-                pictureBox.Height = img.Height;
-                pictureBox.Image = img.ToBitmap();
-                ProgressCount_label.Text = $"{Processing.FrameNumber + 1} / {Processing.FileCount}";
-                SaveDirButton.Enabled = true;
-                BackButton.Enabled = false;
-                NextButton.Enabled = false;
-                SaveButton.Enabled = false;
-                UndoButton.Enabled = false;
-                ClearButton.Enabled = false;
-            }
-        }
-
-        private void SaveDirButton_Click(object sender, EventArgs e)
-        {
-            var fbd = new FolderBrowserDialog();
-            fbd.Description = "保存先を選択";
-            if (fbd.ShowDialog() == DialogResult.OK)
-            {
-                Processing.SaveDirectory = fbd.SelectedPath;
-                pictureBox.Enabled = true;
-                if (Processing.FrameNumber != Processing.FileCount - 1) NextButton.Enabled = true;
+                var fbd2 = new FolderBrowserDialog();
+                fbd2.Description = "保存先を選択";
+                if (fbd2.ShowDialog() == DialogResult.OK)
+                {
+                    var img = Processing.Initialize(fbd1.SelectedPath, fbd2.SelectedPath, _labels, int.Parse(WidthTx.Text), int.Parse(HeightTx.Text));
+                    pictureBox.Width = img.Width;
+                    pictureBox.Height = img.Height;
+                    pictureBox.Image = img.ToBitmap();
+                    pictureBox.Enabled = true;
+                    ProgressCount_label.Text = $"{Processing.FrameNumber + 1} / {Processing.FileCount}";
+                    BackButton.Enabled = false;
+                    NextButton.Enabled = false;
+                    SaveButton.Enabled = false;
+                    UndoButton.Enabled = false;
+                    ClearButton.Enabled = false;
+                    if (Processing.FrameNumber != Processing.FileCount - 1) NextButton.Enabled = true;
+                }
             }
         }
 
@@ -187,5 +179,6 @@ namespace LabellingTool
                     break;
             }
         }
+
     }
 }

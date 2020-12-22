@@ -28,18 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.OpenDirButton = new System.Windows.Forms.Button();
-            this.SaveDirButton = new System.Windows.Forms.Button();
+            this.StartButton = new System.Windows.Forms.Button();
             this.UndoButton = new System.Windows.Forms.Button();
             this.ClearButton = new System.Windows.Forms.Button();
             this.SaveButton = new System.Windows.Forms.Button();
             this.BackButton = new System.Windows.Forms.Button();
             this.NextButton = new System.Windows.Forms.Button();
             this.pictureBox = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.WidthTx = new System.Windows.Forms.TextBox();
-            this.ExtensionTx = new System.Windows.Forms.TextBox();
             this.HeightTx = new System.Windows.Forms.TextBox();
             this.comboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,27 +45,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // OpenDirButton
+            // StartButton
             // 
-            this.OpenDirButton.Font = new System.Drawing.Font("Yu Gothic UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.OpenDirButton.Location = new System.Drawing.Point(12, 12);
-            this.OpenDirButton.Name = "OpenDirButton";
-            this.OpenDirButton.Size = new System.Drawing.Size(78, 47);
-            this.OpenDirButton.TabIndex = 0;
-            this.OpenDirButton.Text = "Open Dir";
-            this.OpenDirButton.UseVisualStyleBackColor = true;
-            this.OpenDirButton.Click += new System.EventHandler(this.OpenDirButton_Click);
-            // 
-            // SaveDirButton
-            // 
-            this.SaveDirButton.Font = new System.Drawing.Font("Yu Gothic UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.SaveDirButton.Location = new System.Drawing.Point(96, 12);
-            this.SaveDirButton.Name = "SaveDirButton";
-            this.SaveDirButton.Size = new System.Drawing.Size(77, 47);
-            this.SaveDirButton.TabIndex = 1;
-            this.SaveDirButton.Text = "Save Dir";
-            this.SaveDirButton.UseVisualStyleBackColor = true;
-            this.SaveDirButton.Click += new System.EventHandler(this.SaveDirButton_Click);
+            this.StartButton.Font = new System.Drawing.Font("Yu Gothic UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.StartButton.Location = new System.Drawing.Point(12, 12);
+            this.StartButton.Name = "StartButton";
+            this.StartButton.Size = new System.Drawing.Size(81, 47);
+            this.StartButton.TabIndex = 0;
+            this.StartButton.Text = "Open";
+            this.StartButton.UseVisualStyleBackColor = true;
+            this.StartButton.Click += new System.EventHandler(this.StartButton_Click);
             // 
             // UndoButton
             // 
@@ -107,9 +93,9 @@
             // 
             this.BackButton.Font = new System.Drawing.Font("Yu Gothic UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BackButton.ForeColor = System.Drawing.Color.Maroon;
-            this.BackButton.Location = new System.Drawing.Point(387, 12);
+            this.BackButton.Location = new System.Drawing.Point(369, 12);
             this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(50, 47);
+            this.BackButton.Size = new System.Drawing.Size(59, 47);
             this.BackButton.TabIndex = 5;
             this.BackButton.Text = "◀(A)";
             this.BackButton.UseVisualStyleBackColor = true;
@@ -119,9 +105,9 @@
             // 
             this.NextButton.Font = new System.Drawing.Font("Yu Gothic UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NextButton.ForeColor = System.Drawing.Color.Navy;
-            this.NextButton.Location = new System.Drawing.Point(443, 12);
+            this.NextButton.Location = new System.Drawing.Point(434, 12);
             this.NextButton.Name = "NextButton";
-            this.NextButton.Size = new System.Drawing.Size(50, 47);
+            this.NextButton.Size = new System.Drawing.Size(59, 47);
             this.NextButton.TabIndex = 6;
             this.NextButton.Text = "▶(D)";
             this.NextButton.UseVisualStyleBackColor = true;
@@ -138,19 +124,10 @@
             this.pictureBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseMove);
             this.pictureBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox_MouseUp);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(179, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 15);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Extension";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(254, 20);
+            this.label2.Location = new System.Drawing.Point(141, 39);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 15);
             this.label2.TabIndex = 9;
@@ -158,23 +135,15 @@
             // 
             // WidthTx
             // 
-            this.WidthTx.Location = new System.Drawing.Point(252, 36);
+            this.WidthTx.Location = new System.Drawing.Point(174, 36);
             this.WidthTx.Name = "WidthTx";
             this.WidthTx.Size = new System.Drawing.Size(29, 23);
             this.WidthTx.TabIndex = 10;
             this.WidthTx.Text = "640";
             // 
-            // ExtensionTx
-            // 
-            this.ExtensionTx.Location = new System.Drawing.Point(179, 36);
-            this.ExtensionTx.Name = "ExtensionTx";
-            this.ExtensionTx.Size = new System.Drawing.Size(65, 23);
-            this.ExtensionTx.TabIndex = 11;
-            this.ExtensionTx.Text = ".png";
-            // 
             // HeightTx
             // 
-            this.HeightTx.Location = new System.Drawing.Point(280, 36);
+            this.HeightTx.Location = new System.Drawing.Point(209, 36);
             this.HeightTx.Name = "HeightTx";
             this.HeightTx.Size = new System.Drawing.Size(30, 23);
             this.HeightTx.TabIndex = 12;
@@ -210,7 +179,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(316, 20);
+            this.label4.Location = new System.Drawing.Point(258, 39);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 15);
             this.label4.TabIndex = 17;
@@ -226,18 +195,15 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBox);
             this.Controls.Add(this.HeightTx);
-            this.Controls.Add(this.ExtensionTx);
             this.Controls.Add(this.WidthTx);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.NextButton);
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.UndoButton);
-            this.Controls.Add(this.SaveDirButton);
-            this.Controls.Add(this.OpenDirButton);
+            this.Controls.Add(this.StartButton);
             this.KeyPreview = true;
             this.Name = "View";
             this.Text = "Labeling Tool";
@@ -250,18 +216,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Button OpenDirButton;
-        private System.Windows.Forms.Button SaveDirButton;
+        private System.Windows.Forms.Button StartButton;
         private System.Windows.Forms.Button UndoButton;
         private System.Windows.Forms.Button ClearButton;
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.Button BackButton;
         private System.Windows.Forms.Button NextButton;
         private System.Windows.Forms.PictureBox pictureBox;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox WidthTx;
-        private System.Windows.Forms.TextBox ExtensionTx;
         private System.Windows.Forms.TextBox HeightTx;
         private System.Windows.Forms.ComboBox comboBox;
         private System.Windows.Forms.Label label3;
