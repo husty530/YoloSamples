@@ -180,5 +180,9 @@ namespace LabellingTool
             }
         }
 
+        private void comboBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
     }
 }
