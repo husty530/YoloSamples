@@ -33,7 +33,7 @@ namespace YoloSharp
             _status = Status.Initialized;
         }
 
-        public (Mat OutputImg, List<Point> Centers, int[] Indices, List<float> Confidences, List<Rect2d> Boxes) Run(Mat inputImg)
+        public (Mat OutputImg, List<string> ClassNames, List<Point> Centers, List<float> Confidences, List<Rect2d> Boxes) Run(Mat inputImg)
         {
             if (_status == Status.NotInitialized) throw new ApplicationException("Detector is not Initialized yet!");
             var blob = CvDnn.BlobFromImage(inputImg, 1.0 / 255, BlobSize, new Scalar(), true, false);
@@ -44,14 +44,16 @@ namespace YoloSharp
             return GetResult(outs, inputImg, _threshold, _nmsThreshold);
         }
 
-        private static (Mat, List<Point>, int[], List<float>, List<Rect2d>) GetResult(IEnumerable<Mat> output, Mat image, float threshold, float nmsThreshold)
+        private static (Mat, List<string>, List<Point>, List<float>, List<Rect2d>) GetResult(IEnumerable<Mat> output, Mat image, float threshold, float nmsThreshold)
         {
+            var classNames = new List<string>();
             var centers = new List<Point>();
             var classIds = new List<int>();
             var confidences = new List<float>();
             var probabilities = new List<float>();
             var boxes = new List<Rect2d>();
             var selectedBoxes = new List<Rect2d>();
+            var selectedConf = new List<float>();
             var w = image.Width;
             var h = image.Height;
             foreach (var pred in output)
@@ -83,10 +85,12 @@ namespace YoloSharp
             {
                 var box = boxes[i];
                 selectedBoxes.Add(box);
+                selectedConf.Add(confidences[i]);
+                classNames.Add(_labels[classIds[i]]);
                 centers.Add(new Point(box.X, box.Y));
                 Draw(image, classIds[i], confidences[i], box.X, box.Y, box.Width, box.Height);
             }
-            return (image, centers, indices, confidences, selectedBoxes);
+            return (image, classNames, centers, selectedConf, selectedBoxes);
         }
 
         private static void Draw(Mat image, int classes, float confidence, double centerX, double centerY, double width, double height)
