@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using OpenCvSharp;
 using OpenCvSharp.Extensions;
@@ -36,7 +30,7 @@ namespace CsApp
             var nmsThresh = float.Parse(NmsTx.Text);
             if (!File.Exists(cfgPath) || !File.Exists(namesPath) || !File.Exists(weightsPath)) return;
             _detector = new Detector();
-            _detector.InitializeDetector(cfgPath, namesPath, weightsPath, new Size(320, 288), confThresh, nmsThresh);
+            _detector.InitializeDetector(cfgPath, namesPath, weightsPath, new Size(256,192), confThresh, nmsThresh);
             OpenButton.Enabled = true;
             RunButton.Enabled = false;
         }
@@ -48,9 +42,9 @@ namespace CsApp
             if (op.ShowDialog() == DialogResult.OK)
             {
                 var ext = Path.GetExtension(op.FileName);
-                if (ext != ".jpg" && ext != ".png") return;
+                if (ext != ".jpg" && ext != ".png" && ext != ".PNG" && ext != ".JPG" && ext != ".jpeg") return;
                 img = new Mat(op.FileName);
-                Cv2.Resize(img, img, new Size(320, 288));
+                Cv2.Resize(img, img, new Size(256, 192));
                 pictureBox.Image = img.ToBitmap();
                 RunButton.Enabled = true;
             }
